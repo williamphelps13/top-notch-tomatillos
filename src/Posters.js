@@ -9,6 +9,11 @@ const Posters = ({ posters }) => {
     )
   })
 
+  return (
+    <section className='posters-container'>
+      {moviePosters}
+    </section>
+  )
 }
 
 export default Posters;
