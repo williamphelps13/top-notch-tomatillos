@@ -15,7 +15,7 @@ class App extends Component {
 
   clickPoster = () => {
     document.querySelector('.posters-container').classList.add('hidden');
-    document.querySelector('.movie-background').style.background = `url(${this.state.singleMovie.backdrop_path}) no-repeat`;
+    document.querySelector('.movie-background').style.background = `url(${this.state.singleMovie.backdrop_path})`;
     document.querySelector('.movie-background').style.height = `100vh`;
   }
 
