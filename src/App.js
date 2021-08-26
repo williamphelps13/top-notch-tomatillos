@@ -18,7 +18,7 @@ class App extends Component {
   }
 
   clickBackBtn = () => {
-    document.querySelector('.back-button').classList.remove('hidden');
+    document.querySelector('.posters-container').classList.remove('hidden');
   }
 
   render() {
@@ -26,7 +26,7 @@ class App extends Component {
       <main className="App">
         <h1 className="App-header">Rancid Tomatillos</h1>
         <Posters posters={this.state.movies} clickPoster={this.clickPoster}/>
-        <Movie movie={this.state.singleMovie} />
+        <Movie movie={this.state.singleMovie} clickBackBtn={this.clickBackBtn}/>
       </main>
     );
   }

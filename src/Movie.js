@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './Movie.css';
 
-const Movie = ({ movie }) => {
+const Movie = ({ movie, clickBackBtn }) => {
 
   return (
     <section className='movie-card'>
@@ -14,6 +14,10 @@ const Movie = ({ movie }) => {
       <p>{movie.budget}</p>
       <p>{movie.release_date}</p>
       <p>{movie.revenue}</p>
+      <button
+        className='back-button'
+        onClick={() => clickBackBtn()}
+      >BACK</button>
     </section>
   )
 }
