@@ -15,14 +15,12 @@ class App extends Component {
 
   clickPoster = () => {
     document.querySelector('.posters-container').classList.add('hidden');
-    document.querySelector('.App').classList.add('background');
-
-    document.querySelector('.App').style.background = `url(${this.state.singleMovie.backdrop_path})`
+    document.querySelector('.App').style.background = `url(${this.state.singleMovie.backdrop_path})`;
   }
 
   clickBackBtn = () => {
     document.querySelector('.posters-container').classList.remove('hidden');
-    document.querySelector('.App').classList.remove('background');
+    document.querySelector('.App').style.background = `white`;
   }
 
   render() {
