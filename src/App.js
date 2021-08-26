@@ -12,6 +12,8 @@ class App extends Component {
   }
 
   clickPoster = () => {
+    document.querySelector('.posters-container').classList.add('hidden');
+
     console.log('test for clickposter')
   }
 
