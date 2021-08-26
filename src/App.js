@@ -13,12 +13,14 @@ class App extends Component {
     }
   }
 
-  clickPoster = () => {
+clickPoster = () => {
     document.querySelector('.posters-container').classList.add('hidden');
+    document.querySelector('.App').classList.add('movie-background');
   }
 
   clickBackBtn = () => {
     document.querySelector('.posters-container').classList.remove('hidden');
+    document.querySelector('.App').classList.remove('movie-background');
   }
 
   render() {
