@@ -3,8 +3,6 @@ import './Posters.css';
 
 const Posters = ({ posters, clickPoster }) => {
   const moviePosters = posters.map(poster => {
-
-    // const id = poster.id;
   
     return (
       <input

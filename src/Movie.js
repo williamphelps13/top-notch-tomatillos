@@ -1,6 +1,10 @@
-// import React, { Component } from 'react';
-// import './Movie.css';
+import React, { Component } from 'react';
+import './Movie.css';
 
-// const Movie = 
+const Movie = ({ movie }) => {
+  return (
+    <h1>this is working</h1>
+  )
+}
 
-// export default Movie;
+export default Movie;
