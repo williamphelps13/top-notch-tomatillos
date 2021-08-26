@@ -11,11 +11,15 @@ class App extends Component {
     }
   }
 
+  clickPoster = () => {
+    console.log('test for clickposter')
+  }
+
   render() {
     return (
       <main className="App">
         <h1 className="App-header">Rancid Tomatillos</h1>
-        <Posters posters={this.state.movies} />
+        <Posters posters={this.state.movies} clickPoster={this.clickPoster}/>
       </main>
     );
   }
