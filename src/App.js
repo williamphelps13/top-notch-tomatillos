@@ -13,14 +13,16 @@ class App extends Component {
     }
   }
 
-clickPoster = () => {
+  clickPoster = () => {
     document.querySelector('.posters-container').classList.add('hidden');
-    document.querySelector('.App').classList.add('movie-background');
+    document.querySelector('.App').classList.add('background');
+
+    document.querySelector('.App').style.background = `url(${this.state.singleMovie.backdrop_path})`
   }
 
   clickBackBtn = () => {
     document.querySelector('.posters-container').classList.remove('hidden');
-    document.querySelector('.App').classList.remove('movie-background');
+    document.querySelector('.App').classList.remove('background');
   }
 
   render() {
@@ -28,7 +30,7 @@ clickPoster = () => {
       <main className="App">
         <h1 className="App-header">Rancid Tomatillos</h1>
         <Posters posters={this.state.movies} clickPoster={this.clickPoster}/>
-        <Movie movie={this.state.singleMovie} clickBackBtn={this.clickBackBtn}/>
+        <Movie movie={this.state.singleMovie} clickBackBtn={this.clickBackBtn} />
       </main>
     );
   }
