@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import movieData from './movieData'
+import movieData from './movieData-test'
 import Posters from './Posters'
 import Movie from './Movie'
 
@@ -17,10 +17,7 @@ class App extends Component {
   componentDidMount() {
     fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
       .then(response => response.json())
-      .then(data => {
-        console.log(data)
-        return this.setState({movies: data.movies})
-      })
+      .then(data => {this.setState({movies: data.movies})})
       .catch(error => this.setState({error: error}))
   }
 

@@ -2,7 +2,6 @@ import React from 'react'
 import './Posters.css';
 
 const Posters = ({ posters, clickPoster }) => {
-  // console.log(posters)
   const moviePosters = posters.map(poster => {
   
     return (
