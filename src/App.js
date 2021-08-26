@@ -8,9 +8,20 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      movies: movieData.movies,
-      singleMovie: movieData.singleMovie
+      movies: [],
+      singleMovie: movieData.singleMovie,
+      error: ''
     }
+  }
+
+  componentDidMount() {
+    fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
+      .then(response => response.json())
+      .then(data => {
+        console.log(data)
+        return this.setState({movies: data.movies})
+      })
+      .catch(error => this.setState({error: error}))
   }
 
   clickPoster = () => {
