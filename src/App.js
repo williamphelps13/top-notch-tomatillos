@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import movieData from './movieData-test';
 import Posters from './Posters'
 import Movie from './Movie'
 
@@ -8,7 +9,7 @@ class App extends Component {
     super();
     this.state = {
       movies: [],
-      singleMovie: {},
+      singleMovie: movieData.singleMovie,
       error: ''
     }
   }
@@ -21,16 +22,16 @@ class App extends Component {
   }
 
   componentDidUpdate() {
-    const urlID = this.state.movies[1].id
+    const urlID = this.state.singleMovie.id
     return fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${urlID}`)
       .then(response => response.json())
       .then(data => {this.setState({singleMovie: data.movie})})
       .catch(error => this.setState({error: error}))
   }
-
+  
   clickPoster = (id) => {   
-    const matchingMovie = this.state.movies.find(movie => id === movie.id)
-    this.state.singleMovie = matchingMovie;
+    const clickedMovie = this.state.movies.find(movie => id === movie.id)
+    this.state.singleMovie = clickedMovie;
     
     document.querySelector('.posters-container').classList.add('hidden');
     document.querySelector('.movie-background').style.background = `url(${this.state.singleMovie.backdrop_path})`;
