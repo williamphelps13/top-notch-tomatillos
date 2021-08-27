@@ -2,13 +2,16 @@
 
 This is an application to manage and track different trips for users and a travel agency.
 
-<!-- [It can be accessed here through [site].](url) -->
+<!--
+// If site is deployed, add this sentence:
+
+It can be accessed here through [site].](url) -->
 
 ## Motivation and rubric
 
-This project was completed as a project at Turing School of Software & Design during Module 2.
+This project was completed as a project at Turing School of Software & Design during Module 3.
 
-[The rubric is linked here.](https://frontend.turing.edu/projects/travel-tracker.html)
+[The rubric is linked here.](https://frontend.turing.edu/projects/module-3/rancid-tomatillos-v3.html)
 
 The goals and objectives are to use OOP to drive the design of the application and the code, work with an API to send and receive data, solidify the code review process, & create a robust test suite that thoroughly tests all functionality of a client-side application.
 
