@@ -1,6 +1,6 @@
 # Thank you for pushing your code!
 
-## What was implimented?
+## What was implemented?
 -
 
 ## Were there any issues that arose?
