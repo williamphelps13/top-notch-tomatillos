@@ -1,6 +1,6 @@
 # Rancid Tomatillos
 
-This is an application to manage and track different trips for users and a travel agency.
+This is an application to access movie details through an API. The user can access a list of movies, can select any one of them, & be provided information about that specific film.
 
 <!--
 // If site is deployed, add this sentence:
@@ -13,7 +13,7 @@ This project was completed as a project at Turing School of Software & Design du
 
 [The rubric is linked here.](https://frontend.turing.edu/projects/module-3/rancid-tomatillos-v3.html)
 
-The goals and objectives are to use OOP to drive the design of the application and the code, work with an API to send and receive data, solidify the code review process, & create a robust test suite that thoroughly tests all functionality of a client-side application.
+The goals and objectives were to gain competency with React fundamentals, learn how to test React components & asynchronous JS, practice refactoring, & create a multi-page UX using Router.
 
 <!-- ## Reflections
 
@@ -23,9 +23,9 @@ Big successes were _____. -->
 
 ## Languages and technology
 
-Written in JavaScript, HTML, CSS, JSX
+Written in JavaScript, HTML, CSS, & JSX
 
-Utilizes NPM, Node, Cypress, & React
+Utilizes NPM, Node, Cypress, Router, & React
 
 Built with Visual Studio Code
 
