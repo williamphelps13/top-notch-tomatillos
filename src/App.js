@@ -9,11 +9,11 @@ class App extends Component {
     super();
     this.state = {
       movies: [],
-      singleMovie: movieData.singleMovie,
+      singleMovie: {},
       error: ''
     }
   }
-
+  
   componentDidMount() {
     fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
       .then(response => response.json())
@@ -21,7 +21,15 @@ class App extends Component {
       .catch(error => this.setState({error: error}))
   }
 
-  clickPoster = () => {
+  componentDidUpdate() {
+    const urlID = this.state.movies[1].id
+    return fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${urlID}`)
+      .then(response => response.json())
+      .then(data => {this.setState({singleMovie: data.movie})})
+      .catch(error => this.setState({error: error}))
+  }
+
+  clickPoster = () => {    
     document.querySelector('.posters-container').classList.add('hidden');
     document.querySelector('.movie-background').style.background = `url(${this.state.singleMovie.backdrop_path})`;
     document.querySelector('.movie-background').style.height = `100vh`;
