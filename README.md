@@ -117,6 +117,9 @@ Built with Visual Studio Code
 
 [Project board on GitHub](https://github.com/williamphelps13/rancid-tomatillos/projects/1) 
 
+<!-- 
+
+// The steps of this section will change if we end up deploying the site.
 ## Repository install and setup
 
 ### Clone project repository
@@ -144,46 +147,20 @@ Enter the following command in the Terminal:
 ### Clone API repository
 
 Enter the following command in the Terminal:
-`git clone https://github.com/turingschool-examples/travel-tracker-api.git`
+`git clone https://github.com/williamphelps13/rancid-tomatillos/projects/1.git`
 
 ### Navigate to folder
 
 Enter the following command in the Terminal:
-`cd travel-tracker`
+`http://localhost:8080/`-->
 
-### Install dependencies
+<!-- ## Access and use website
 
-Enter the following command in the Terminal:
-`npm install`
+[Explain how to navigate site.] -->
 
-### Run API
+<!-- ## GIF
 
-Enter the following command in the Terminal:
-`npm start`
-
-## Access and use website
-
-Enter the following URL in your internet browser:
-`http://localhost:8080/`
-
-A user logs into the site with the username `traveler` + their ID.
-
-To just try the site to see how it works, use `traveler1`, and then `travel` for the password.
-
-You will be presented a dashboard of current, past, pending, and future trips. You will also see your yearly payments so far.
-
-If you click "Trip Planner", you will be able to schedule a trip.
-
-Once you fill out and submit that form, you will see an estimated price, and then you can confirm it. Note that you will not be charged until it's approved by an agent.
-
-Once you confirm it, you'll be send back to your dashboard, where it will be under "pending".
-
-To end the session, click "Log Out".
-
-## GIFs
-
-![dashboard gif](./src/images/dashboard.gif) 
-![trip planner gif](src/images/trip-planner.gif)
+![rancid tomatillos gif](./src/images/rancid.gif)  -->
 
 ## Future addition
 
