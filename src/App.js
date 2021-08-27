@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './App.css';
-import movieData from './movieData-test'
 import Posters from './Posters'
 import Movie from './Movie'
 
@@ -29,7 +28,10 @@ class App extends Component {
       .catch(error => this.setState({error: error}))
   }
 
-  clickPoster = () => {    
+  clickPoster = (id) => {   
+    const matchingMovie = this.state.movies.find(movie => id === movie.id)
+    this.state.singleMovie = matchingMovie;
+    
     document.querySelector('.posters-container').classList.add('hidden');
     document.querySelector('.movie-background').style.background = `url(${this.state.singleMovie.backdrop_path})`;
     document.querySelector('.movie-background').style.height = `100vh`;
