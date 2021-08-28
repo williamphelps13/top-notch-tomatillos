@@ -9,8 +9,8 @@ const Posters = ({ posters, clickPoster }) => {
         type="image"
         src={poster.poster_path}
         className='poster-icon'
-        onClick={() => clickPoster()}
-        alt='(movie title)'
+        onClick={() => clickPoster(poster.id)}
+        alt={poster.title}
         id={poster.id}
         key={poster.id}        
       />
