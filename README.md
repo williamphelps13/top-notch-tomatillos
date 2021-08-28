@@ -1,70 +1,90 @@
-# Getting Started with Create React App
+# Rancid Tomatillos
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is an application to access movie details through an API. The user can access a list of movies, can select any one of them, & be provided information about that specific film.
 
-## Available Scripts
+<!--
+// If site is deployed, add this sentence:
 
-In the project directory, you can run:
+It can be accessed here through [site].](url) -->
 
-### `npm start`
+## Motivation and rubric
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+This project was completed as a project at Turing School of Software & Design during Module 3.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+[The rubric is linked here.](https://frontend.turing.edu/projects/module-3/rancid-tomatillos-v3.html)
 
-### `npm test`
+The goals and objectives were to gain competency with React fundamentals, learn how to test React components & asynchronous JS, practice refactoring, & create a multi-page UX using Router.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<!-- ## Reflections
 
-### `npm run build`
+A challenge was _____.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Big successes were _____. -->
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Languages and technology
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Written in JavaScript, HTML, CSS, & JSX
 
-### `npm run eject`
+Utilizes NPM, Node, Cypress, Router, & React
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Built with Visual Studio Code
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+[Code stored on GitHub](https://github.com/williamphelps13/rancid-tomatillos)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+[Project board on GitHub](https://github.com/williamphelps13/rancid-tomatillos/projects/1) 
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+<!-- 
 
-## Learn More
+// The steps of this section will change if we end up deploying the site.
+## Repository install and setup
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Clone project repository
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Enter the following command in the Terminal:
+`git clone https://github.com/hayleyw7/travel-tracker.git`
 
-### Code Splitting
+### Navigate to folder
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Enter the following command in the Terminal:
+`cd travel-tracker`
 
-### Analyzing the Bundle Size
+### Install dependencies
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Enter the following command in the Terminal:
+`npm install`
 
-### Making a Progressive Web App
+### Run local host
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Enter the following command in the Terminal:
+`npm start`
 
-### Advanced Configuration
+## API install and setup
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### Clone API repository
 
-### Deployment
+Enter the following command in the Terminal:
+`git clone https://github.com/williamphelps13/rancid-tomatillos/projects/1.git`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### Navigate to folder
 
-### `npm run build` fails to minify
+Enter the following command in the Terminal:
+`http://localhost:8080/`-->
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<!-- ## Access and use website
+
+[Explain how to navigate site.] -->
+
+<!-- ## GIF
+
+![rancid tomatillos gif](./src/images/rancid.gif)  -->
+
+<!-- ## Future addition
+
+* [1st addition]
+* [2nd edition] -->
+
+## Contributors
+
+Project completed by [William Phelps](https://github.com/williamphelps13) & [Hayley Witherell](https://github.com/hayleyw7)
+
+Project designed by instructors at Turing School of Art & Design
