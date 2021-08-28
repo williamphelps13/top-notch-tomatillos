@@ -9,7 +9,7 @@ class App extends Component {
     super();
     this.state = {
       movies: [],
-      singleMovie: movieData.singleMovie,
+      singleMovie: {},
       error: ''
     }
   }
@@ -20,22 +20,23 @@ class App extends Component {
       .then(data => {this.setState({movies: data.movies})})
       .catch(error => this.setState({error: error}))
   }
-
-  componentDidUpdate() {
-    const urlID = this.state.singleMovie.id
-    return fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${urlID}`)
-      .then(response => response.json())
-      .then(data => {this.setState({singleMovie: data.movie})})
-      .catch(error => this.setState({error: error}))
-  }
   
   clickPoster = (id) => {   
     const clickedMovie = this.state.movies.find(movie => id === movie.id)
-    this.state.singleMovie = clickedMovie;
+    this.setState({singleMovie: clickedMovie});
+    this.fetchMovie(id);
     
     document.querySelector('.posters-container').classList.add('hidden');
+    
     document.querySelector('.movie-background').style.background = `url(${this.state.singleMovie.backdrop_path})`;
     document.querySelector('.movie-background').style.height = `100vh`;
+  }
+
+  fetchMovie(id) {
+    return fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${id}`)
+      .then(response => response.json())
+      .then(data => {this.setState({singleMovie: data.movie})})
+      .catch(error => this.setState({error: error}))
   }
 
   clickBackBtn = () => {
