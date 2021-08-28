@@ -10,7 +10,7 @@ const Posters = ({ posters, clickPoster }) => {
         src={poster.poster_path}
         className='poster-icon'
         onClick={() => clickPoster(poster.id)}
-        alt='(movie title)'
+        alt={poster.title}
         id={poster.id}
         key={poster.id}        
       />
