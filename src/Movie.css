@@ -1,3 +1,10 @@
+.movie-background {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 85vh;
+}
+
 .movie-card {
   border: 1px solid black;
   width: 30rem;
