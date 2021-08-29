@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './App.css';
-import movieData from './movieData-test';
 import Posters from './Posters'
 import Movie from './Movie'
 
@@ -9,7 +8,7 @@ class App extends Component {
     super();
     this.state = {
       movies: [],
-      singleMovie: movieData.singleMovie,
+      singleMovie: {},
       error: ''
     }
   }
@@ -20,34 +19,28 @@ class App extends Component {
       .then(data => {this.setState({movies: data.movies})})
       .catch(error => this.setState({error: error}))
   }
+  
+  clickPoster = (id) => {   
+    this.fetchMovie(id);
+    document.querySelector('.posters-container').classList.add('hidden');
+  }
 
-  componentDidUpdate() {
-    const urlID = this.state.singleMovie.id
-    return fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${urlID}`)
+  fetchMovie(id) {
+    return fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${id}`)
       .then(response => response.json())
       .then(data => {this.setState({singleMovie: data.movie})})
       .catch(error => this.setState({error: error}))
   }
-  
-  clickPoster = (id) => {   
-    const clickedMovie = this.state.movies.find(movie => id === movie.id)
-    this.state.singleMovie = clickedMovie;
-    
-    document.querySelector('.posters-container').classList.add('hidden');
-    document.querySelector('.movie-background').style.background = `url(${this.state.singleMovie.backdrop_path})`;
-    document.querySelector('.movie-background').style.height = `100vh`;
-  }
 
   clickBackBtn = () => {
     document.querySelector('.posters-container').classList.remove('hidden');
-    document.querySelector('.movie-background').style.background = `white`;
   }
 
   render() {
     return (
       <main className="App">
         <h1 className="App-header">Rancid Tomatillos</h1>
-        <Posters posters={this.state.movies} clickPoster={this.clickPoster}/>
+        <Posters posters={this.state.movies} clickPoster={this.clickPoster} />
         <Movie movie={this.state.singleMovie} clickBackBtn={this.clickBackBtn} />
       </main>
     );
