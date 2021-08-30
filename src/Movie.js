@@ -13,10 +13,16 @@ const Movie = ({ movie, clickBackBtn }) => {
         <p>{tagline}</p>
         <p>{overview}</p>
         <p>{genres.join(' | ')}</p>
-        <p>{runtime}</p>
-        <p>{budget}</p>
+        {!runtime ? runtime = '' :
+          <p>{runtime}</p>
+        }
+        {!budget ? budget = '' : 
+          <p>${budget.toLocaleString()}</p>
+        }
         <p>{release_date}</p>
-        <p>{revenue}</p>
+        {!revenue ? revenue = '' :
+          <p>${revenue.toLocaleString()}</p>
+        }
         <button
           className='back-button'
           onClick={() => clickBackBtn()}
