@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Posters from './Posters'
 import Movie from './Movie'
+import {fetchMovies, fetchSingleMovie} from './apiCalls';
 
 class App extends Component {
   constructor() {
@@ -23,20 +24,22 @@ class App extends Component {
     fetchSingleMovie(id)
     .then(data => this.setState({singleMovie: data.movie}))
     .catch(error => this.setState({error: error}))
-    document.querySelector('.posters-container').classList.add('hidden');
   }
 
   clickBackBtn = () => {
-    document.querySelector('.posters-container').classList.remove('hidden');
+    this.setState({singleMovie: {}})
   }
 
   render() {
+ 
     return (
       <main className="App">
         <h1 className="App-header">Rancid Tomatillos</h1>
-        {error && <h2>{this.state.error}</h2>}
-        <Posters posters={this.state.movies} clickPoster={this.clickPoster} />
-        <Movie movie={this.state.singleMovie} clickBackBtn={this.clickBackBtn} />
+
+        {!Object.keys(this.state.singleMovie).length ?
+          <Posters posters={this.state.movies} clickPoster={this.clickPoster} /> :
+          <Movie movie={this.state.singleMovie} clickBackBtn={this.clickBackBtn} />
+        }
       </main>
     );
   }
