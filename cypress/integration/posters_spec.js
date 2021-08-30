@@ -44,4 +44,6 @@ describe('Rancid Tomatillos Posters Page', () => {
     .click()
     .get('h2').should('contain', 'Mulan')
   });
-});
+
+  // add more?
+}); 
