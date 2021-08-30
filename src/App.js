@@ -36,6 +36,8 @@ class App extends Component {
       <main className="App">
         <h1 className="App-header">Rancid Tomatillos</h1>
 
+        {this.state.error && <h2>{this.state.error}</h2>}
+        
         {!this.state.movies.length && <p>Hang Tight!</p>}
 
         {!Object.keys(this.state.singleMovie).length ?
