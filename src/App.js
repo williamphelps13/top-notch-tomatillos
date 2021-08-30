@@ -20,15 +20,10 @@ class App extends Component {
   }
   
   clickPoster = (id) => {   
-    this.fetchMovie(id);
+    fetchSingleMovie(id)
+    .then(data => this.setState({singleMovie: data.movie}))
+    .catch(error => this.setState({error: error}))
     document.querySelector('.posters-container').classList.add('hidden');
-  }
-
-  fetchMovie(id) {
-    return fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${id}`)
-      .then(response => response.json())
-      .then(data => {this.setState({singleMovie: data.movie})})
-      .catch(error => this.setState({error: error}))
   }
 
   clickBackBtn = () => {
