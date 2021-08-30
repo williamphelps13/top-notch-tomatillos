@@ -2,13 +2,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  background-size: cover;
   height: 85vh;
 }
 
 .movie-card {
-  border: 1px solid black;
+  font-weight: 500;
   width: 30rem;
   padding: 2rem;
   margin-left: 2rem;
-  background: white;
+  background:rgb(40, 44, 52, 0.8);
+  color: white;
+  border-radius: .5rem;
 }
