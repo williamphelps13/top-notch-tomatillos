@@ -12,7 +12,7 @@ const Movie = ({ movie, clickBackBtn }) => {
         <p>★ {average_rating}</p>
         <p>{tagline}</p>
         <p>{overview}</p>
-        <p>{genres}</p>
+        <p>{genres.join(' | ')}</p>
         <p>{runtime}</p>
         <p>{budget}</p>
         <p>{release_date}</p>
