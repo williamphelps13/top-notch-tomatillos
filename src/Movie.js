@@ -1,5 +1,6 @@
 import React from 'react';
 import './Movie.css';
+import dayjs from 'dayjs';
 
 const Movie = ({ movie, clickBackBtn }) => {
 
@@ -19,7 +20,7 @@ const Movie = ({ movie, clickBackBtn }) => {
         {!budget ? budget = '' : 
           <p>${budget.toLocaleString()}</p>
         }
-        <p>{release_date}</p>
+        <p>{dayjs(release_date).format('MM/DD/YYYY')}</p>
         {!revenue ? revenue = '' :
           <p>${revenue.toLocaleString()}</p>
         }
