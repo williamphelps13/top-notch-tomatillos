@@ -9,7 +9,7 @@ const Movie = ({ movie, clickBackBtn }) => {
     <section className='movie-background' style={{ backgroundImage: `url(${backdrop_path})` }}>
       <section className='movie-card'>
         <h2>{title}</h2>
-        <p>★ {average_rating}</p>
+        <p>★ {average_rating.toFixed(1)}</p>
         <p>{tagline}</p>
         <p>{overview}</p>
         <p>{genres.join(' | ')}</p>
