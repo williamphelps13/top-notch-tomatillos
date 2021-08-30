@@ -24,13 +24,14 @@ describe('Rancid Tomatillos Posters Page', () => {
   });
 
   it('Should confirm that the correct posters display', () => {
-    cy.get('input')
+    cy.get('input[type="image"]')
     .should('have.attr', 'src')
     .should('include','https://image.tmdb.org/t/p/original//6CoRTJTmijhBLJTUNoVSUNxZMEI.jpg')
   });
 
   it('Should confirm that all posters display', () => {
-    cy.get('input[type="image"]') 
+    cy.get('input[type="image"]')
+    .its('length')
+    .should('eq', 40)
   });
-
 });
