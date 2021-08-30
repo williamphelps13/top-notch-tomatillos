@@ -2,17 +2,19 @@ import React from 'react'
 import './Posters.css';
 
 const Posters = ({ posters, clickPoster }) => {
+
   const moviePosters = posters.map(poster => {
-  
+    const {poster_path, id, title} = poster;
+
     return (
       <input
         type="image"
-        src={poster.poster_path}
+        src={poster_path}
         className='poster-icon'
-        onClick={() => clickPoster(poster.id)}
-        alt={poster.title}
-        id={poster.id}
-        key={poster.id}        
+        onClick={() => clickPoster(id)}
+        alt={title}
+        id={id}
+        key={id}        
       />
     )
   })
