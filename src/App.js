@@ -34,6 +34,7 @@ class App extends Component {
     return (
       <main className="App">
         <h1 className="App-header">Rancid Tomatillos</h1>
+        {error && <h2>{this.state.error}</h2>}
         <Posters posters={this.state.movies} clickPoster={this.clickPoster} />
         <Movie movie={this.state.singleMovie} clickBackBtn={this.clickBackBtn} />
       </main>
