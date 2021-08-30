@@ -3,18 +3,20 @@ import './Movie.css';
 
 const Movie = ({ movie, clickBackBtn }) => {
 
+  let {id, title, backdrop_path, average_rating, tagline, overview, genres, runtime, budget, release_date, revenue} = movie;
+
   return (
     <section className='movie-background'>
       <section className='movie-card'>
-        <h2>{movie.title}</h2>
-        <p>★ {movie.average_rating}</p>
-        <p>{movie.tagline}</p>
-        <p>{movie.overview}</p>
-        <p>{movie.genres}</p>
-        <p>{movie.runtime}</p>
-        <p>{movie.budget}</p>
-        <p>{movie.release_date}</p>
-        <p>{movie.revenue}</p>
+        <h2>{title}</h2>
+        <p>★ {average_rating}</p>
+        <p>{tagline}</p>
+        <p>{overview}</p>
+        <p>{genres}</p>
+        <p>{runtime}</p>
+        <p>{budget}</p>
+        <p>{release_date}</p>
+        <p>{revenue}</p>
         <button
           className='back-button'
           onClick={() => clickBackBtn()}
