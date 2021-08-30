@@ -43,8 +43,5 @@ describe('Rancid Tomatillos Posters Page', () => {
     cy.get('input[alt="Mulan"]')
     .click()
     .get('h2').should('contain', 'Mulan')
-
-// see posters hide
-// see movie info loads
   });
 });
