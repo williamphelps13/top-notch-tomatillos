@@ -7,11 +7,15 @@ describe('Rancid Tomatillos Posters Page', () => {
     cy.visit('http://localhost:3000');
   });
 
+  // test movies api?
+
   // dummy test to make sure things are hooked up correctly
 
   // it('Should confirm that true is equal to true', () => {
   //   expect(true).to.equal(true)
   // });
+
+  // real tests
 
   it('Should confirm that user can visit localhost:3000', () => {
     cy.get('h1')
@@ -33,5 +37,14 @@ describe('Rancid Tomatillos Posters Page', () => {
     cy.get('input[type="image"]')
     .its('length')
     .should('eq', 40)
+  });
+
+  it('Should be able to click poster directing user the corresponding movie page', () => {
+    cy.get('input[alt="Mulan"]')
+    .click()
+    .get('h2').should('contain', 'Mulan')
+
+// see posters hide
+// see movie info loads
   });
 });
