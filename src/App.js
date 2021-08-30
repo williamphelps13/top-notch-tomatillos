@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Posters from './Posters'
 import Movie from './Movie'
+import {fetchMovies, fetchSingleMovie} from './apiCalls';
 
 class App extends Component {
   constructor() {
@@ -14,34 +15,35 @@ class App extends Component {
   }
   
   componentDidMount() {
-    fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
-      .then(response => response.json())
-      .then(data => {this.setState({movies: data.movies})})
-      .catch(error => this.setState({error: error}))
+    fetchMovies()
+    .then(data => this.setState({movies: data.movies}))
+    .catch(error => this.setState({error: error}))
   }
   
   clickPoster = (id) => {   
-    this.fetchMovie(id);
-    document.querySelector('.posters-container').classList.add('hidden');
-  }
-
-  fetchMovie(id) {
-    return fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${id}`)
-      .then(response => response.json())
-      .then(data => {this.setState({singleMovie: data.movie})})
-      .catch(error => this.setState({error: error}))
+    fetchSingleMovie(id)
+    .then(data => this.setState({singleMovie: data.movie}))
+    .catch(error => this.setState({error: error}))
   }
 
   clickBackBtn = () => {
-    document.querySelector('.posters-container').classList.remove('hidden');
+    this.setState({singleMovie: {}})
   }
 
   render() {
+ 
     return (
       <main className="App">
         <h1 className="App-header">Rancid Tomatillos</h1>
-        <Posters posters={this.state.movies} clickPoster={this.clickPoster} />
-        <Movie movie={this.state.singleMovie} clickBackBtn={this.clickBackBtn} />
+
+        {this.state.error && <h2>{this.state.error}</h2>}
+        
+        {!this.state.movies.length && <p>Hang Tight!</p>}
+
+        {!Object.keys(this.state.singleMovie).length ?
+          <Posters posters={this.state.movies} clickPoster={this.clickPoster} /> :
+          <Movie movie={this.state.singleMovie} clickBackBtn={this.clickBackBtn} />
+        }
       </main>
     );
   }
