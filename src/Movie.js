@@ -1,6 +1,7 @@
 import React from 'react';
 import './Movie.css';
 import dayjs from 'dayjs';
+import { Link } from 'react-router-dom';
 
 const Movie = ({ movie, clickBackBtn }) => {
 
@@ -24,10 +25,14 @@ const Movie = ({ movie, clickBackBtn }) => {
         {!revenue ? revenue = '' :
           <p>${revenue.toLocaleString()}</p>
         }
-        <button
-          className='back-button'
-          onClick={() => clickBackBtn()}
-        >BACK</button>
+        <Link 
+          to='/'
+        >
+          <button
+            className='back-button'
+            onClick={() => clickBackBtn()}
+          >BACK</button>
+        </Link>
       </section>
     </section>
   )
