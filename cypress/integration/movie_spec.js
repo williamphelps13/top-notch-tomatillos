@@ -34,7 +34,7 @@ describe('Rancid Tomatillos Movie Page', () => {
     cy.get('p').should('contain', '$57,000,000')   
   });
 
-// view back button & that back button works?
+// view back button & that back button works
 
   it('Should display back button', () => {
     cy.get('button') 
@@ -42,7 +42,9 @@ describe('Rancid Tomatillos Movie Page', () => {
   });
 
   it('Should direct user back to poster page', () => {
-    // cy.get('input[type="image"]') 
-    // .should('be.visible')
+    cy.get('button')
+    .click()
+    cy.get('input[type="image"]') 
+    .should('be.visible')
   });
 })
