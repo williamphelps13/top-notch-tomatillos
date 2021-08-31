@@ -1,5 +1,6 @@
 import React from 'react'
 import './Posters.css';
+import { Link } from 'react-router-dom';
 
 const Posters = ({ posters, clickPoster }) => {
 
@@ -7,6 +8,9 @@ const Posters = ({ posters, clickPoster }) => {
     const {poster_path, id, title} = poster;
 
     return (
+      <Link
+        to={`/${id}`}
+      >
       <input
         type="image"
         src={poster_path}
@@ -16,6 +20,7 @@ const Posters = ({ posters, clickPoster }) => {
         id={id}
         key={id}        
       />
+      </Link>
     )
   })
   
