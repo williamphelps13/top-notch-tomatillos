@@ -3,7 +3,7 @@ import './App.css';
 import Posters from './Posters'
 import Movie from './Movie'
 import {fetchMovies, fetchSingleMovie} from './apiCalls';
-import { Router } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 
 class App extends Component {
   constructor() {
@@ -42,9 +42,8 @@ class App extends Component {
         
         {!movies.length && <p>Hang Tight!</p>}
 
-        
-        <Posters posters={movies} clickPoster={this.clickPoster} />
-        <Movie movie={singleMovie} clickBackBtn={this.clickBackBtn} />
+        <Route exact path='/' render={() => <Posters posters={movies} clickPoster={this.clickPoster} /> } />
+        <Route exact path={`/${singleMovie.id}`} render={() => <Movie movie={singleMovie} clickBackBtn={this.clickBackBtn} /> } />
       </main>
     );
   }
