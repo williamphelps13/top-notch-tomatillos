@@ -34,7 +34,10 @@ describe('Rancid Tomatillos Movie Page', () => {
     cy.get('p').should('contain', '$57,000,000')   
   });
 
-// view back button & that back button works
+  it('Should not display posters', () => {
+    cy.get('input[type="image"]') 
+    .should('not.exist')
+  });
 
   it('Should display back button', () => {
     cy.get('button') 
@@ -48,3 +51,5 @@ describe('Rancid Tomatillos Movie Page', () => {
     .should('be.visible')
   });
 })
+
+// posters hidden?

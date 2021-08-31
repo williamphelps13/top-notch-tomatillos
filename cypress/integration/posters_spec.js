@@ -39,6 +39,11 @@ describe('Rancid Tomatillos Posters Page', () => {
     .should('eq', 40)
   });
 
+  it('Should not display posters', () => {
+    cy.get('input[type="image"]') 
+    .should('not.be.visible')
+  });
+
   it('Should be able to click poster & be directed to the corresponding movie page', () => {
     cy.get('input[alt="Mulan"]')
     .click()
@@ -46,3 +51,5 @@ describe('Rancid Tomatillos Posters Page', () => {
   });
 
 }); 
+
+// movie card hidden?
