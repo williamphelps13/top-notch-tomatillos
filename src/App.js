@@ -3,6 +3,7 @@ import './App.css';
 import Posters from './Posters'
 import Movie from './Movie'
 import {fetchMovies, fetchSingleMovie} from './apiCalls';
+import { Router } from 'react-router-dom';
 
 class App extends Component {
   constructor() {
@@ -31,7 +32,7 @@ class App extends Component {
   }
 
   render() {
- 
+    
     return (
       <main className="App">
         <h1 className="App-header">Rancid Tomatillos</h1>
@@ -40,13 +41,17 @@ class App extends Component {
         
         {!this.state.movies.length && <p>Hang Tight!</p>}
 
-        {!Object.keys(this.state.singleMovie).length ?
-          <Posters posters={this.state.movies} clickPoster={this.clickPoster} /> :
-          <Movie movie={this.state.singleMovie} clickBackBtn={this.clickBackBtn} />
-        }
+        
+        <Posters posters={this.state.movies} clickPoster={this.clickPoster} />
+        <Movie movie={this.state.singleMovie} clickBackBtn={this.clickBackBtn} />
       </main>
     );
   }
 } 
 
 export default App;
+
+// {!Object.keys(this.state.singleMovie).length ?
+//   <Posters posters={this.state.movies} clickPoster={this.clickPoster} /> :
+//   <Movie movie={this.state.singleMovie} clickBackBtn={this.clickBackBtn} />
+// }
