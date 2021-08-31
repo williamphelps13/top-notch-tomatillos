@@ -4,8 +4,9 @@ describe('Rancid Tomatillos Movie Page', () => {
 
   beforeEach(() => {
     cy.visit('http://localhost:3000');
+    cy.get('input[alt="Mulan"]')
+    .click()
   });
-
 
   // test singleMovie api?
 
@@ -16,11 +17,21 @@ describe('Rancid Tomatillos Movie Page', () => {
 //   });
 // });
 
+  it('Should confirm that user can visit page & view heading', () => {
+    cy.get('h1')
+    .contains('Rancid Tomatillos')
+  });
 
-  
-// see posters hide
-// see movie info loads
+  it('Should display movie info', () => {
+    cy.get('h2').should('contain', 'Mulan')
+    cy.get('p').should('contain', '★ 5.3')    
+    cy.get('p').should('contain', 'When the Emperor of China')   
+    cy.get('p').should('contain', 'Drama')   
+    cy.get('p').should('contain', 'Adventure')      
+    cy.get('p').should('contain', '115')   
+    cy.get('p').should('contain', '$200,000,000')   
+    cy.get('p').should('contain', '09/04/2020')   
+    cy.get('p').should('contain', '$57,000,000')   
+  });
 
-// update state??
-
-// !Object.keys(this.state.singleMovie).length
+})
