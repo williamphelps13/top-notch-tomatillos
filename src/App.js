@@ -32,18 +32,19 @@ class App extends Component {
   }
 
   render() {
+    const {movies, singleMovie, error} = this.state;
     
     return (
       <main className="App">
         <h1 className="App-header">Rancid Tomatillos</h1>
 
-        {this.state.error && <h2>{this.state.error}</h2>}
+        {error && <h2>{error}</h2>}
         
-        {!this.state.movies.length && <p>Hang Tight!</p>}
+        {!movies.length && <p>Hang Tight!</p>}
 
         
-        <Posters posters={this.state.movies} clickPoster={this.clickPoster} />
-        <Movie movie={this.state.singleMovie} clickBackBtn={this.clickBackBtn} />
+        <Posters posters={movies} clickPoster={this.clickPoster} />
+        <Movie movie={singleMovie} clickBackBtn={this.clickBackBtn} />
       </main>
     );
   }
