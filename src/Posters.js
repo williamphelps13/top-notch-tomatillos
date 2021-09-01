@@ -10,14 +10,13 @@ const Posters = ({ posters }) => {
     return (
       <Link
         to={`/${id}`}
+        key={id}  
       >
-      <input
-        type="image"
+      <img
         src={poster_path}
         className='poster-icon'
         alt={title}
         id={id}
-        key={id}        
       />
       </Link>
     )
