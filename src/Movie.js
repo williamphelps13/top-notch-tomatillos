@@ -26,32 +26,25 @@ class Movie extends Component {
 
   return (
     <section className='movie-background' style={{ backgroundImage: `url(${backdrop_path})` }}>
-      <section className='movie-card'>
-        <h2>{title}</h2>
-        <p>★ {average_rating.toFixed(1)}</p>
-        <p>{tagline}</p>
-        <p>{overview}</p>
-        <p>{genres.join(' | ')}</p>
-        {!runtime ? runtime = '' :
-          <p>{runtime}</p>
-        }
-        {!budget ? budget = '' : 
-          <p>${budget.toLocaleString()}</p>
-        }
-        <p>{dayjs(release_date).format('MM/DD/YYYY')}</p>
-        {!revenue ? revenue = '' :
-          <p>${revenue.toLocaleString()}</p>
-        }
-        <Link 
-          to='/'
-        >
-          <button
-            className='back-button'
-            onClick={() => clickBackBtn()}
-          >BACK</button>
-        </Link>
-      </section>
+    <section className='movie-card'>
+      <h2>{title}</h2>
+      <p>★ {average_rating.toFixed(1)}</p>
+      <p>{tagline}</p>
+      <p>{overview}</p>
+      <p>{genres.join(' | ')}</p>
+      <p>{runtime ? runtime : ''}</p>
+      <p>{budget ? `$${budget.toLocaleString()}` : ''}</p>
+      <p>{dayjs(release_date).format('MM/DD/YYYY')}</p>
+      <p>{revenue ? `$${revenue.toLocaleString()}` : ''}</p>
+      <Link 
+        to='/'
+      >
+        <button
+          className='back-button'
+        >BACK</button>
+      </Link>
     </section>
+  </section>
   )
 }
 
