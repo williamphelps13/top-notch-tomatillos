@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Posters from './Posters'
 import Movie from './Movie'
-import {fetchMovies, fetchSingleMovie} from './apiCalls';
+import { fetchMovies } from './apiCalls';
 import { Route } from 'react-router-dom';
 
 class App extends Component {
@@ -10,7 +10,6 @@ class App extends Component {
     super();
     this.state = {
       movies: [],
-      singleMovie: {},
       error: ''
     }
   }
@@ -20,19 +19,9 @@ class App extends Component {
     .then(data => this.setState({movies: data.movies}))
     .catch(error => this.setState({error: error}))
   }
-  
-  clickPoster = (id) => {   
-    fetchSingleMovie(id)
-    .then(data => this.setState({singleMovie: data.movie}))
-    .catch(error => this.setState({error: error}))
-  }
-
-  clickBackBtn = () => {
-    this.setState({singleMovie: {}})
-  }
 
   render() {
-    const {movies, singleMovie, error} = this.state;
+    const {movies, error} = this.state;
     
     return (
       <main className="App">
@@ -56,8 +45,3 @@ class App extends Component {
 } 
 
 export default App;
-
-// {!Object.keys(this.state.singleMovie).length ?
-//   <Posters posters={this.state.movies} clickPoster={this.clickPoster} /> :
-//   <Movie movie={this.state.singleMovie} clickBackBtn={this.clickBackBtn} />
-// }
