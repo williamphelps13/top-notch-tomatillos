@@ -1,9 +1,17 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './Movie.css';
 import dayjs from 'dayjs';
+import {fetchSingleMovie} from './apiCalls';
 import { Link } from 'react-router-dom';
 
-const Movie = ({ movie, clickBackBtn }) => {
+class Movie extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      singleMovie: {},
+      error: ''
+    }
+  }
 
   let {id, title, backdrop_path, average_rating, tagline, overview, genres, runtime, budget, release_date, revenue} = movie;
 
