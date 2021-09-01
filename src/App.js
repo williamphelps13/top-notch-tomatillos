@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Posters from './Posters'
 import Movie from './Movie'
+import Loader from './Loader'
 import { fetchMovies } from './apiCalls';
 import { Route } from 'react-router-dom';
 
@@ -29,7 +30,7 @@ class App extends Component {
 
         {error && <h2>The server doesn't seem to be working right now</h2>} 
         
-        {!movies.length && !error && <p>Hang Tight!</p>}
+        {(!movies.length && !error) && <Loader />}
 
         <Route exact path='/' render={() => <Posters posters={movies} /> } />
         
@@ -37,7 +38,7 @@ class App extends Component {
           exact path='/:id' 
           render={({ match }) => {
             const clickedMovieID = parseInt(match.params.id);
-          return <Movie movieID={clickedMovieID}/> 
+            return <Movie movieID={clickedMovieID} /> 
           }}
         />
       </main>
