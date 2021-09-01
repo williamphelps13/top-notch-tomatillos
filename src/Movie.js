@@ -18,8 +18,11 @@ class Movie extends Component {
     .then(data => this.setState({singleMovie: data.movie}))
     .catch(error => this.setState({error: error}))
   }
-  
-  let {id, title, backdrop_path, average_rating, tagline, overview, genres, runtime, budget, release_date, revenue} = movie;
+
+  render() {
+    const {singleMovie, error} = this.state;
+    
+    let {backdrop_path, title, average_rating, tagline, overview, genres, runtime, budget, release_date, revenue} = singleMovie;
 
   return (
     <section className='movie-background' style={{ backgroundImage: `url(${backdrop_path})` }}>
