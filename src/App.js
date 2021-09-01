@@ -43,7 +43,13 @@ class App extends Component {
         {!movies.length && <p>Hang Tight!</p>}
 
         <Route exact path='/' render={() => <Posters posters={movies} clickPoster={this.clickPoster} /> } />
-        <Route exact path={`/${singleMovie.id}`} render={() => <Movie movie={singleMovie} clickBackBtn={this.clickBackBtn} /> } />
+        <Route 
+          exact path='/:id' 
+          render={({ match }) => {
+            const clickedMovieID = parseInt(match.params.id);
+          return <Movie movieID={clickedMovieID}/> 
+          }}
+        />
       </main>
     );
   }
