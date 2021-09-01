@@ -13,6 +13,12 @@ class Movie extends Component {
     }
   }
 
+  componentDidMount() {
+    fetchSingleMovie(this.props.movieID)
+    .then(data => this.setState({singleMovie: data.movie}))
+    .catch(error => this.setState({error: error}))
+  }
+  
   let {id, title, backdrop_path, average_rating, tagline, overview, genres, runtime, budget, release_date, revenue} = movie;
 
   return (
