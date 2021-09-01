@@ -24,28 +24,36 @@ class Movie extends Component {
     
     let {backdrop_path, title, average_rating, tagline, overview, genres, runtime, budget, release_date, revenue} = singleMovie;
 
-  return (
-    <section className='movie-background' style={{ backgroundImage: `url(${backdrop_path})` }}>
-    <section className='movie-card'>
-      <h2>{title}</h2>
-      <p>★ {average_rating.toFixed(1)}</p>
-      <p>{tagline}</p>
-      <p>{overview}</p>
-      <p>{genres.join(' | ')}</p>
-      <p>{runtime ? runtime : ''}</p>
-      <p>{budget ? `$${budget.toLocaleString()}` : ''}</p>
-      <p>{dayjs(release_date).format('MM/DD/YYYY')}</p>
-      <p>{revenue ? `$${revenue.toLocaleString()}` : ''}</p>
-      <Link 
-        to='/'
-      >
-        <button
-          className='back-button'
-        >BACK</button>
-      </Link>
-    </section>
-  </section>
-  )
+    return (
+      <div>
+
+        {!Object.keys(singleMovie).length 
+        ? <p>Movie is Coming - Hang Tight!</p> :
+
+        <section className='movie-background' style={{ backgroundImage: `url(${backdrop_path})` }}>
+          <section className='movie-card'>
+            <h2>{title}</h2>
+            <p>★ {average_rating.toFixed(1)}</p>
+            <p>{tagline}</p>
+            <p>{overview}</p>
+            <p>{genres.join(' | ')}</p>
+            <p>{runtime ? runtime : ''}</p>
+            <p>{budget ? `$${budget.toLocaleString()}` : ''}</p>
+            <p>{dayjs(release_date).format('MM/DD/YYYY')}</p>
+            <p>{revenue ? `$${revenue.toLocaleString()}` : ''}</p>
+            <Link 
+              to='/'
+            >
+              <button
+                className='back-button'
+              >BACK</button>
+            </Link>
+          </section>
+        </section>
+      }
+      </div>
+    )
+  }
 }
 
 export default Movie;
