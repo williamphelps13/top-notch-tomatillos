@@ -31,7 +31,8 @@ class App extends Component {
         
         {!movies.length && !error && <p>Hang Tight!</p>}
 
-        <Route exact path='/' render={() => <Posters posters={movies} clickPoster={this.clickPoster} /> } />
+        <Route exact path='/' render={() => <Posters posters={movies} /> } />
+        
         <Route 
           exact path='/:id' 
           render={({ match }) => {
