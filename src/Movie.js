@@ -3,6 +3,7 @@ import './Movie.css';
 import dayjs from 'dayjs';
 import {fetchSingleMovie} from './apiCalls';
 import { Link } from 'react-router-dom';
+import Loader from './Loader'
 
 class Movie extends Component {
   constructor(props) {
@@ -28,7 +29,7 @@ class Movie extends Component {
       <div>
 
         {!Object.keys(singleMovie).length 
-        ? <p>Movie is Coming - Hang Tight!</p> :
+        ? <Loader /> :
 
         <section className='movie-background' style={{ backgroundImage: `url(${backdrop_path})` }}>
           <section className='movie-card'>
