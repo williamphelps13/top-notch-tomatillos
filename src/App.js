@@ -17,7 +17,7 @@ class App extends Component {
   componentDidMount() {
     fetchMovies()
     .then(data => this.setState({movies: data.movies}))
-    .catch(error => this.setState({error: error}))
+    .catch(error => this.setState({error: error.message}))
   }
 
   render() {
@@ -27,7 +27,7 @@ class App extends Component {
       <main className="App">
         <h1 className="App-header">Rancid Tomatillos</h1>
 
-        {error && <h2>{error}</h2>}
+        {error && <h2>The server doesn't seem to be working right now</h2>} 
         
         {!movies.length && <p>Hang Tight!</p>}
 
