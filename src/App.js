@@ -3,6 +3,7 @@ import './App.css';
 import Posters from './Posters'
 import Movie from './Movie'
 import {fetchMovies, fetchSingleMovie} from './apiCalls';
+import { Route } from 'react-router-dom';
 
 class App extends Component {
   constructor() {
@@ -31,22 +32,26 @@ class App extends Component {
   }
 
   render() {
- 
+    const {movies, singleMovie, error} = this.state;
+    
     return (
       <main className="App">
         <h1 className="App-header">Rancid Tomatillos</h1>
 
-        {this.state.error && <h2>{this.state.error}</h2>}
+        {error && <h2>{error}</h2>}
         
-        {!this.state.movies.length && <p>Hang Tight!</p>}
+        {!movies.length && <p>Hang Tight!</p>}
 
-        {!Object.keys(this.state.singleMovie).length ?
-          <Posters posters={this.state.movies} clickPoster={this.clickPoster} /> :
-          <Movie movie={this.state.singleMovie} clickBackBtn={this.clickBackBtn} />
-        }
+        <Route exact path='/' render={() => <Posters posters={movies} clickPoster={this.clickPoster} /> } />
+        <Route exact path={`/${singleMovie.id}`} render={() => <Movie movie={singleMovie} clickBackBtn={this.clickBackBtn} /> } />
       </main>
     );
   }
 } 
 
 export default App;
+
+// {!Object.keys(this.state.singleMovie).length ?
+//   <Posters posters={this.state.movies} clickPoster={this.clickPoster} /> :
+//   <Movie movie={this.state.singleMovie} clickBackBtn={this.clickBackBtn} />
+// }
