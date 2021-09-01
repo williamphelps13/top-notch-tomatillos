@@ -29,7 +29,7 @@ class App extends Component {
 
         {error && <h2>The server doesn't seem to be working right now</h2>} 
         
-        {!movies.length && <p>Hang Tight!</p>}
+        {!movies.length && !error && <p>Hang Tight!</p>}
 
         <Route exact path='/' render={() => <Posters posters={movies} clickPoster={this.clickPoster} /> } />
         <Route 
