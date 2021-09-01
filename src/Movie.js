@@ -16,7 +16,7 @@ class Movie extends Component {
   componentDidMount() {
     fetchSingleMovie(this.props.movieID)
     .then(data => this.setState({singleMovie: data.movie}))
-    .catch(error => this.setState({error: error}))
+    .catch(error => this.setState({error: error.message}))
   }
 
   render() {
@@ -50,7 +50,7 @@ class Movie extends Component {
             </Link>
           </section>
         </section>
-      }
+        }
       </div>
     )
   }
