@@ -29,7 +29,7 @@ class Movie extends Component {
       <div>
 
         {!Object.keys(singleMovie).length 
-        ? <Loader /> :
+        ? <Loader item='movie information is'/> :
 
         <section className='movie-background' style={{ backgroundImage: `url(${backdrop_path})` }}>
           <section className='movie-card'>

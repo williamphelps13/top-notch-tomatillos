@@ -30,7 +30,7 @@ class App extends Component {
 
         {error && <h2>The server doesn't seem to be working right now</h2>} 
         
-        {(!movies.length && !error) && <Loader />}
+        {(!movies.length && !error) && <Loader item='movie posters are'/>}
 
         <Route exact path='/' render={() => <Posters posters={movies} /> } />
         

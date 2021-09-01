@@ -3,10 +3,10 @@ import React from 'react'
 import App from './App'
 import { Link } from 'react-router-dom';
 
-const Loader = () => {
+const Loader = ({ item }) => {
   return (
     <div className='loader-container'>
-      <h2 className='loader-msg'>THIS IS A TEST</h2>    
+      <h2 className='loader-msg'><p>Hang tight!</p><p>The {item} loading.</p></h2>    
     </div>
   )
 }
