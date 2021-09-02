@@ -3,7 +3,7 @@ import './App.css';
 import Posters from './Posters'
 import Movie from './Movie'
 import Loader from './Loader'
-
+import Error from './Error'
 import { fetchMovies } from './apiCalls';
 import { Route } from 'react-router-dom';
 
@@ -29,7 +29,7 @@ class App extends Component {
       <main className="App">
         <h1 className="App-header">Rancid Tomatillos</h1>
 
-        {error && <h2>We've encountered an error!</h2>} 
+        {error && <Error />} 
         
         <Route exact path='/' render={() => !movies.length && !error ? <Loader item='movie posters are' /> : <Posters posters={movies} />}/>
 
@@ -40,7 +40,7 @@ class App extends Component {
             return <Movie movieID={clickedMovieID} /> 
           }}
         />
-
+        
       </main>
     );
   }
