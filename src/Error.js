@@ -1,5 +1,6 @@
 import React from 'react'
-// import './Error.css';
+import './Error.css';
+import errorIcon from './error.png'
 
 const Error = () => {
   return (
@@ -9,7 +10,7 @@ const Error = () => {
       <img
         alt='Error icon'
         className='error-icon'
-        src='./error.jpg'
+        src={errorIcon}
       ></img>   
     </div>
   )
