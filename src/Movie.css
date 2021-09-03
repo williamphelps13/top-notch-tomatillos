@@ -34,6 +34,7 @@ button {
   border-radius: 1rem;
   /* margin: 0 0.3rem 0 0.4rem; */
   padding: 0.2rem 0.6rem 0.2rem 0.6rem;
+  color: rgb(40, 44, 52, 0.8);
 }
 
 .movie-rating {
@@ -43,4 +44,20 @@ button {
 
 .movie-overview {
   font-size: 1.2rem;
+}
+
+.movie-genres {
+  margin: .5rem 0 .5rem 0;
+  background: white;
+  color: rgb(40, 44, 52, 0.8);
+  padding: 0.1rem 0.6rem 0.25rem 0.6rem;
+  border-radius: 1rem;
+  font-size: 1.2rem;
+}
+
+.genre-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
 }

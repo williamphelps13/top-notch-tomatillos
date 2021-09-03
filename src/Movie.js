@@ -36,7 +36,9 @@ class Movie extends Component {
             <p className='movie-rating'>★ {average_rating.toFixed(1)}</p>
             <p className='movie-tagline'>{tagline}</p>
             <p className='movie-overview'>{overview}</p>
-            {genres.map(genre => <p>{genre}</p>)}
+            <div className='genre-container'>
+              {genres.map(genre => <p className='movie-genres'>{genre}</p>)}
+            </div>
             <p>{runtime ? runtime : ''} Minutes</p>
             <p>{dayjs(release_date).format('YYYY')}</p>
             <Link 
