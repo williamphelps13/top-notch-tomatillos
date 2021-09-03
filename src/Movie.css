@@ -15,3 +15,12 @@
   color: white;
   border-radius: .5rem;
 }
+
+.movie-title {
+  font-size: 3rem;
+  margin: 0;
+}
+
+.tagline {
+  font-style: italic;
+}
