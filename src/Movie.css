@@ -3,14 +3,15 @@
   justify-content: center;
   align-items: center;
   background-size: cover;
-  height: 85vh;
+  height: 100vh;
+  flex-direction: column;
 }
 
 .movie-card {
   font-weight: 500;
   width: 30rem;
   padding: 1.5rem;
-  margin: 0 2rem 0 2rem;
+  margin: 1rem 2rem 0 2rem;
   background:rgb(40, 44, 52, 0.8);
   color: white;
   border-radius: .5rem;
@@ -29,11 +30,11 @@
 
 button {
   border: 0;
-  font-size: 1.2rem;
+  font-size: 1.8rem;
   background: white;
-  border-radius: 1rem;
-  /* margin: 0 0.3rem 0 0.4rem; */
-  padding: 0.2rem 0.6rem 0.2rem 0.6rem;
+  border-radius: 10rem;
+  margin: 2rem 0 1rem 0;
+  padding: 0.5rem 0.9rem 0.4rem 0.9rem;
   color: rgb(40, 44, 52, 0.8);
 }
 
@@ -47,7 +48,7 @@ button {
 }
 
 .movie-genres {
-  margin: .5rem 0 .5rem 0;
+  margin: .5rem .1rem .5rem .1rem;
   background: white;
   color: rgb(40, 44, 52, 0.8);
   padding: 0.1rem 0.6rem 0.25rem 0.6rem;
@@ -60,4 +61,8 @@ button {
   flex-direction: row;
   justify-content: space-evenly;
   flex-wrap: wrap;
+}
+
+.movie-runtime {
+  font-weight: bold;
 }

@@ -26,7 +26,7 @@ class Movie extends Component {
     let {backdrop_path, title, average_rating, genres, tagline, overview, runtime, budget, release_date, revenue} = singleMovie;
 
     return (
-      <div className='movie-background-test'>
+      <div>
 
         {!Object.keys(singleMovie).length ? <Loader item='movie information is'/> :
 
@@ -36,19 +36,15 @@ class Movie extends Component {
             <p className='movie-rating'>★ {average_rating.toFixed(1)}</p>
             <p className='movie-tagline'>{tagline}</p>
             <p className='movie-overview'>{overview}</p>
+            <p className='bottom-element'>{dayjs(release_date).format('YYYY')}</p>
+            <p className='movie-runtime'>{runtime ? runtime : ''} Minutes</p>
             <div className='genre-container'>
               {genres.map(genre => <p className='movie-genres'>{genre}</p>)}
             </div>
-            <p>{runtime ? runtime : ''} Minutes</p>
-            <p>{dayjs(release_date).format('YYYY')}</p>
-            <Link 
-              to='/'
-            >
-              <button
-                className='back-button'
-              >BACK</button>
-            </Link>
           </section>
+          <Link to='/'>
+            <button className='back-button'>BACK</button>
+          </Link>
         </section>
         }
       </div>
