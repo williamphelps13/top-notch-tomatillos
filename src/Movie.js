@@ -26,7 +26,7 @@ class Movie extends Component {
     let {backdrop_path, title, average_rating, genres, tagline, overview, runtime, budget, release_date, revenue} = singleMovie;
 
     return (
-      <div>
+      <div className='movie-background-test'>
 
         {!Object.keys(singleMovie).length ? <Loader item='movie information is'/> :
 
