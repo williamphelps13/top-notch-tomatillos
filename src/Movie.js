@@ -23,7 +23,7 @@ class Movie extends Component {
   render() {
     const {singleMovie, error} = this.state;
     
-    let {backdrop_path, title, average_rating, tagline, overview, genres, runtime, budget, release_date, revenue} = singleMovie;
+    let {backdrop_path, title, average_rating, genres, tagline, overview, runtime, budget, release_date, revenue} = singleMovie;
 
     return (
       <div>
@@ -36,7 +36,7 @@ class Movie extends Component {
             <p className='movie-rating'>★ {average_rating.toFixed(1)}</p>
             <p className='movie-tagline'>{tagline}</p>
             <p className='movie-overview'>{overview}</p>
-            <p>{genres.join(' | ')}</p>
+            {genres.map(genre => <p>{genre}</p>)}
             <p>{runtime ? runtime : ''} Minutes</p>
             <p>{dayjs(release_date).format('YYYY')}</p>
             <Link 
