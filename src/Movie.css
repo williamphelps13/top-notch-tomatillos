@@ -9,7 +9,7 @@
 
 .movie-card {
   font-weight: 500;
-  width: 30rem;
+  width: 40rem;
   padding: 1.5rem;
   margin: 1rem 2rem 0 2rem;
   background:rgb(40, 44, 52, 0.8);
@@ -28,7 +28,7 @@
   margin-top: 1.2rem;
 }
 
-button {
+.back-button {
   border: 0;
   font-size: 1.8rem;
   background: white;
@@ -36,6 +36,10 @@ button {
   margin: 2rem 0 1rem 0;
   padding: 0.5rem 0.9rem 0.4rem 0.9rem;
   color: rgb(40, 44, 52, 0.8);
+}
+
+.back-button:hover {
+  transform: scale(1.25) perspective(1px);  
 }
 
 .movie-rating {
