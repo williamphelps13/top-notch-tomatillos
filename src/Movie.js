@@ -25,6 +25,8 @@ class Movie extends Component {
     
     let {backdrop_path, title, average_rating, genres, tagline, overview, runtime, release_date} = singleMovie;
 
+    const runtimeMinutes = `${runtime} minutes`
+
     return (
       <div>
 
@@ -37,7 +39,7 @@ class Movie extends Component {
             <p className='movie-tagline'>{tagline}</p>
             <p className='movie-overview'>{overview}</p>
             <p className='movie-release'>{dayjs(release_date).format('YYYY')}</p>
-            <p className='movie-runtime'>{runtime ? runtime : ''} Minutes</p>
+            <p className='movie-runtime'>{runtime ? runtimeMinutes : ''}</p>
             <div className='genre-container'>
               {genres.map(genre => <p className='movie-genres'>{genre}</p>)}
             </div>
