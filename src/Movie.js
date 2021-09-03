@@ -26,6 +26,7 @@ class Movie extends Component {
     let {backdrop_path, title, average_rating, genres, tagline, overview, runtime, release_date} = singleMovie;
 
     const runtimeMinutes = `${runtime} minutes`
+    const taglineQuotes = `"${tagline}"`
 
     return (
       <div>
