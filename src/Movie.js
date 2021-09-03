@@ -32,15 +32,13 @@ class Movie extends Component {
 
         <section className='movie-background' style={{ backgroundImage: `url(${backdrop_path})` }}>
           <section className='movie-card'>
-            <h2>{title}</h2>
+            <h2 className='movie-title'>{title}</h2>
             <p>★ {average_rating.toFixed(1)}</p>
-            <p>{tagline}</p>
+            <p className='tagline'>{tagline}</p>
             <p>{overview}</p>
             <p>{genres.join(' | ')}</p>
-            <p>{runtime ? runtime : ''}</p>
-            <p>{budget ? `$${budget.toLocaleString()}` : ''}</p>
-            <p>{dayjs(release_date).format('MM/DD/YYYY')}</p>
-            <p>{revenue ? `$${revenue.toLocaleString()}` : ''}</p>
+            <p>{runtime ? runtime : ''} Minutes</p>
+            <p>{dayjs(release_date).format('YYYY')}</p>
             <Link 
               to='/'
             >
