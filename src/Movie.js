@@ -33,9 +33,9 @@ class Movie extends Component {
         <section className='movie-background' style={{ backgroundImage: `url(${backdrop_path})` }}>
           <section className='movie-card'>
             <h2 className='movie-title'>{title}</h2>
-            <p>★ {average_rating.toFixed(1)}</p>
-            <p className='tagline'>{tagline}</p>
-            <p>{overview}</p>
+            <p className='movie-rating'>★ {average_rating.toFixed(1)}</p>
+            <p className='movie-tagline'>{tagline}</p>
+            <p className='movie-overview'>{overview}</p>
             <p>{genres.join(' | ')}</p>
             <p>{runtime ? runtime : ''} Minutes</p>
             <p>{dayjs(release_date).format('YYYY')}</p>

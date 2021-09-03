@@ -9,18 +9,38 @@
 .movie-card {
   font-weight: 500;
   width: 30rem;
-  padding: 2rem;
-  margin-left: 2rem;
+  padding: 1.5rem;
+  margin: 0 2rem 0 2rem;
   background:rgb(40, 44, 52, 0.8);
   color: white;
   border-radius: .5rem;
 }
 
 .movie-title {
-  font-size: 3rem;
+  font-size: 3.2rem;
   margin: 0;
 }
 
-.tagline {
+.movie-tagline {
   font-style: italic;
+  font-size: 1.5rem;
+  margin-top: 1.2rem;
+}
+
+button {
+  border: 0;
+  font-size: 1.2rem;
+  background: white;
+  border-radius: 1rem;
+  /* margin: 0 0.3rem 0 0.4rem; */
+  padding: 0.2rem 0.6rem 0.2rem 0.6rem;
+}
+
+.movie-rating {
+  font-size: 1.5rem;
+  margin: 1rem 0 0 0;
+}
+
+.movie-overview {
+  font-size: 1.2rem;
 }
