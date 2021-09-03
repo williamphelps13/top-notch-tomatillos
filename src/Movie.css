@@ -1,9 +1,9 @@
 .movie-background {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   background-size: cover;
-  height: 100vh;
+  height: 85vh;
   flex-direction: column;
 }
 
@@ -11,7 +11,7 @@
   font-weight: 500;
   width: 40rem;
   padding: 1.5rem;
-  margin: 1rem 2rem 0 2rem;
+  margin: 3rem 2rem 0 2rem;
   background:rgb(40, 44, 52, 0.8);
   color: white;
   border-radius: .5rem;
