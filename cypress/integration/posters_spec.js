@@ -54,6 +54,17 @@ describe('Posters Page', () => {
       .should('not.exist')
   });
 
+  it('Should be able to click background with no change in page', () => {
+    cy.get('section[class="posters-container"]')
+      .click()
+    cy.get('img[class="poster-icon"]')
+      .should('be.visible')
+    cy.get('button[class="back-button"]')
+      .should('not.exist')
+    cy.get('h2[class="movie-title"]')
+      .should('not.exist')
+  });
+  
   it('Should be able to click a movie poster & be directed to the corresponding movie page', () => {
     cy.get('img[alt="Donald Duck"]')
       .click()
