@@ -69,6 +69,15 @@ describe('Single Movie Details Page', () => {
       .should('not.exist')
   });
 
+  it('Should be able to click background with no change in page', () => {
+    cy.get('section[class="movie-background"]')
+      .click()
+    cy.get('button[class="back-button"]')
+      .should('be.visible')
+    cy.get('img[class="poster-icon"]')
+      .should('not.exist')
+  });
+
   it('Should direct user back to poster page', () => {
     cy.get('button[class="back-button"]')
       .click()
