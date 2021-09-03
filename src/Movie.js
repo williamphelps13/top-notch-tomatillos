@@ -25,7 +25,7 @@ class Movie extends Component {
     
     let {backdrop_path, title, average_rating, genres, tagline, overview, runtime, release_date} = singleMovie;
 
-    const runtimeMinutes = `${runtime} minutes`
+    const runtimeMinutes = `${runtime} Minutes`
     const taglineQuotes = `\"${tagline}\"`
 
     return (
@@ -37,7 +37,7 @@ class Movie extends Component {
           <section className='movie-card'>
             <h2 className='movie-title'>{title}</h2>
             <p className='movie-rating'>★ {average_rating.toFixed(1)}</p>
-            <p className='movie-tagline'>{taglineQuotes}</p>
+            <p className='movie-tagline'>{tagline ? taglineQuotes : ''}</p>
             <p className='movie-overview'>{overview}</p>
             <p className='movie-release'>{dayjs(release_date).format('YYYY')}</p>
             <p className='movie-runtime'>{runtime ? runtimeMinutes : ''}</p>

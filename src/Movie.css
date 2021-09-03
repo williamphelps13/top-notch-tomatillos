@@ -3,7 +3,7 @@
   justify-content: flex-start;
   align-items: center;
   background-size: cover;
-  height: 85vh;
+  min-height: 85vh;
   flex-direction: column;
 }
 
