@@ -23,7 +23,7 @@ class Movie extends Component {
   render() {
     const {singleMovie, error} = this.state;
     
-    let {backdrop_path, title, average_rating, genres, tagline, overview, runtime, budget, release_date, revenue} = singleMovie;
+    let {backdrop_path, title, average_rating, genres, tagline, overview, runtime, release_date} = singleMovie;
 
     return (
       <div>
