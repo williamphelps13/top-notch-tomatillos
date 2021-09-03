@@ -1,27 +1,59 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './Movie.css';
+import dayjs from 'dayjs';
+import {fetchSingleMovie} from './apiCalls';
+import { Link } from 'react-router-dom';
+import Loader from './Loader'
 
-const Movie = ({ movie, clickBackBtn }) => {
+class Movie extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      singleMovie: {},
+      error: ''
+    }
+  }
 
-  return (
-    <section className='movie-background'>
-      <section className='movie-card'>
-        <h2>{movie.title}</h2>
-        <p>★ {movie.average_rating}</p>
-        <p>{movie.tagline}</p>
-        <p>{movie.overview}</p>
-        <p>{movie.genres}</p>
-        <p>{movie.runtime}</p>
-        <p>{movie.budget}</p>
-        <p>{movie.release_date}</p>
-        <p>{movie.revenue}</p>
-        <button
-          className='back-button'
-          onClick={() => clickBackBtn()}
-        >BACK</button>
-      </section>
-    </section>
-  )
+  componentDidMount() {
+    fetchSingleMovie(this.props.movieID)
+    .then(data => this.setState({singleMovie: data.movie}))
+    .catch(error => this.setState({error: error.message}))
+  }
+
+  render() {
+    const {singleMovie, error} = this.state;
+    
+    let {backdrop_path, title, average_rating, tagline, overview, genres, runtime, budget, release_date, revenue} = singleMovie;
+
+    return (
+      <div>
+
+        {!Object.keys(singleMovie).length ? <Loader item='movie information is'/> :
+
+        <section className='movie-background' style={{ backgroundImage: `url(${backdrop_path})` }}>
+          <section className='movie-card'>
+            <h2>{title}</h2>
+            <p>★ {average_rating.toFixed(1)}</p>
+            <p>{tagline}</p>
+            <p>{overview}</p>
+            <p>{genres.join(' | ')}</p>
+            <p>{runtime ? runtime : ''}</p>
+            <p>{budget ? `$${budget.toLocaleString()}` : ''}</p>
+            <p>{dayjs(release_date).format('MM/DD/YYYY')}</p>
+            <p>{revenue ? `$${revenue.toLocaleString()}` : ''}</p>
+            <Link 
+              to='/'
+            >
+              <button
+                className='back-button'
+              >BACK</button>
+            </Link>
+          </section>
+        </section>
+        }
+      </div>
+    )
+  }
 }
 
 export default Movie;

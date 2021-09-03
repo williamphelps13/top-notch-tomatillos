@@ -1,19 +1,24 @@
 import React from 'react'
 import './Posters.css';
+import { Link } from 'react-router-dom';
 
-const Posters = ({ posters, clickPoster }) => {
+const Posters = ({ posters }) => {
+
   const moviePosters = posters.map(poster => {
-  
+    const {poster_path, id, title} = poster;
+
     return (
-      <input
-        type="image"
-        src={poster.poster_path}
+      <Link
+        to={`/${id}`}
+        key={id}  
+      >
+      <img
+        src={poster_path}
         className='poster-icon'
-        onClick={() => clickPoster()}
-        alt='(movie title)'
-        id={poster.id}
-        key={poster.id}        
+        alt={title}
+        id={id}
       />
+      </Link>
     )
   })
   
