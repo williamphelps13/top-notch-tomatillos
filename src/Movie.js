@@ -23,7 +23,7 @@ class Movie extends Component {
   render() {
     const {singleMovie, error} = this.state;
     
-    let {backdrop_path, title, average_rating, tagline, overview, genres, runtime, budget, release_date, revenue} = singleMovie;
+    let {backdrop_path, title, average_rating, genres, tagline, overview, runtime, budget, release_date, revenue} = singleMovie;
 
     return (
       <div>
@@ -32,23 +32,19 @@ class Movie extends Component {
 
         <section className='movie-background' style={{ backgroundImage: `url(${backdrop_path})` }}>
           <section className='movie-card'>
-            <h2>{title}</h2>
-            <p>★ {average_rating.toFixed(1)}</p>
-            <p>{tagline}</p>
-            <p>{overview}</p>
-            <p>{genres.join(' | ')}</p>
-            <p>{runtime ? runtime : ''}</p>
-            <p>{budget ? `$${budget.toLocaleString()}` : ''}</p>
-            <p>{dayjs(release_date).format('MM/DD/YYYY')}</p>
-            <p>{revenue ? `$${revenue.toLocaleString()}` : ''}</p>
-            <Link 
-              to='/'
-            >
-              <button
-                className='back-button'
-              >BACK</button>
-            </Link>
+            <h2 className='movie-title'>{title}</h2>
+            <p className='movie-rating'>★ {average_rating.toFixed(1)}</p>
+            <p className='movie-tagline'>{tagline}</p>
+            <p className='movie-overview'>{overview}</p>
+            <p className='movie-release'>{dayjs(release_date).format('YYYY')}</p>
+            <p className='movie-runtime'>{runtime ? runtime : ''} Minutes</p>
+            <div className='genre-container'>
+              {genres.map(genre => <p className='movie-genres'>{genre}</p>)}
+            </div>
           </section>
+          <Link to='/'>
+            <button className='back-button'>BACK</button>
+          </Link>
         </section>
         }
       </div>

@@ -1,4 +1,13 @@
 .poster-icon {
   width: 15rem;
   margin: .7rem;
+  border-radius: .5rem;
+}
+
+.poster-icon:hover {
+  transform: scale(1.07) perspective(1px);  
+}
+
+.posters-container {
+  margin-top: 1rem;
 }
