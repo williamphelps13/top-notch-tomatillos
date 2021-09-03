@@ -43,7 +43,7 @@
 }
 
 .movie-rating {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   margin: 1rem 0 0 0;
 }
 
@@ -69,4 +69,11 @@
 
 .movie-runtime {
   font-weight: bold;
+  margin: .4rem 0 1rem 0;
+}
+
+.movie-release {
+  font-size: 1.3rem; 
+  font-weight: bold; 
+  margin: 0;
 }
