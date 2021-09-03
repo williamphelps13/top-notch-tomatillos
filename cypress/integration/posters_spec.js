@@ -1,14 +1,8 @@
 describe('Posters Page', () => {
 
   beforeEach(() => {
-    cy.intercept('https://rancid-tomatillos.herokuapp.com/api/v2/movies', {
-      statusCode: 201,
-      fixture: 'posters_test_data.json'
-    }).intercept('https://rancid-tomatillos.herokuapp.com/api/v2/movies/337401', {
-      statusCode: 201,
-      fixture: 'movie_test_data.json'
-    }).visit('http://localhost:3000')
-  });
+    cy.loadPostersPage()
+  })
 
   it('Should be able to visit the page and render the page heading', () => {
     cy.get('h1')
@@ -52,6 +46,7 @@ describe('Posters Page', () => {
   it('Should be able to click a movie poster & be directed to the corresponding movie page', () => {
     cy.get('img[alt="Donald Duck"]')
       .click()
-      .get('h2').should('contain', 'Donald Duck')
+      .get('h2')
+      .should('contain', 'Donald Duck')
   });
 });
