@@ -40,10 +40,11 @@ After returning to the poster page, they can use the forward button on their bro
 
 ![rancid tomatillos gif](./src/images/rancid.gif)  -->
 
-<!-- ## Future addition
+## Future additions
 
-* [1st addition]
-* [2nd edition] -->
+* The user will be able to add movies to a list of favorites.
+* The user will be able to search movies by name.
+* The user will be able to search movies by genre.
 
 ## Contributors
 
