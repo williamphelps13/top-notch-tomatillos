@@ -36,6 +36,8 @@ When the user visits the site, they will be able to see a page full of movie pos
 
 After returning to the poster page, they can use the forward button on their browser to return to the previous movie information page, or they can click a new movie poster to see that movie information page instead.
 
+Each page has a unique URL that can be bookmarked and/or manually typed in the address bar.
+
 <!-- ## GIF
 
 ![rancid tomatillos gif](./src/images/rancid.gif)  -->
