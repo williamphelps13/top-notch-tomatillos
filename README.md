@@ -12,11 +12,25 @@ This project was completed as a project at Turing School of Software & Design du
 
 The goals and objectives were to gain competency with React fundamentals, learn how to test React components & asynchronous JS, practice refactoring, & create a multi-page UX using Router.
 
-<!-- ## Reflections
+## Reflections and evolution
+
+### Start of project
 
 A challenge was _____.
 
-Big successes were _____. -->
+A success was _____.
+
+## Middle of project
+
+A challenge was _____.
+
+A success was _____.
+
+## End of project
+
+A challenge was _____.
+
+A success was _____.
 
 ## Languages and technology
 
