@@ -10,8 +10,8 @@
 .movie-card {
   font-weight: 500;
   max-width: 40rem;
-  padding: 1.5rem 2rem 1.5rem 2rem;
-  margin: 3rem 2rem 0 2rem;
+  padding: 1.5rem 2rem 1.6rem 2rem;
+  margin: 3rem 2.4rem 0 2rem;
   background:rgb(40, 44, 52, 0.8);
   color: white;
   border-radius: .5rem;
@@ -77,3 +77,4 @@
   font-weight: bold; 
   margin: 0;
 }
+
