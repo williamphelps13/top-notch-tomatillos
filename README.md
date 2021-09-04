@@ -30,43 +30,6 @@ Built with Visual Studio Code
 
 [Project board on GitHub](https://github.com/williamphelps13/rancid-tomatillos/projects/1) 
 
-<!-- 
-
-// The steps of this section will change if we end up deploying the site.
-## Repository install and setup
-
-### Clone project repository
-
-Enter the following command in the Terminal:
-`git clone https://github.com/hayleyw7/travel-tracker.git`
-
-### Navigate to folder
-
-Enter the following command in the Terminal:
-`cd travel-tracker`
-
-### Install dependencies
-
-Enter the following command in the Terminal:
-`npm install`
-
-### Run local host
-
-Enter the following command in the Terminal:
-`npm start`
-
-## API install and setup
-
-### Clone API repository
-
-Enter the following command in the Terminal:
-`git clone https://github.com/williamphelps13/rancid-tomatillos/projects/1.git`
-
-### Navigate to folder
-
-Enter the following command in the Terminal:
-`http://localhost:8080/`-->
-
 <!-- ## Access and use website
 
 [Explain how to navigate site.] -->
