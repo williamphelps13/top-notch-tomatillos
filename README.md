@@ -16,21 +16,21 @@ The goals and objectives were to gain competency with React fundamentals, learn 
 
 ### Start of project
 
-A challenge was _____.
+A challenge was conditional rendering and ternary syntax.
 
-A success was _____.
+Big successes were setting up React components, application foundations, & implementing JSX.
 
 ## Middle of project
 
-A challenge was _____.
+A challenge was setting up Router.
 
-A success was _____.
+A success was setting up stubbing.
 
 ## End of project
 
-A challenge was _____.
+A challenge mastering Cypress.
 
-A success was _____.
+A success was getting the site deployed.
 
 ## Languages and technology
 
