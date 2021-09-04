@@ -1,15 +1,15 @@
 .movie-background {
-  display: flex;
-  justify-content: flex-start;
+  display: flex; 
+  justify-content: center;
   align-items: center;
   background-size: cover;
   min-height: 85vh;
-  flex-direction: column;
+  flex-direction: row;
 }
 
 .movie-card {
   font-weight: 500;
-  width: 40rem;
+  max-width: 40rem;
   padding: 1.5rem 2rem 1.5rem 2rem;
   margin: 3rem 2rem 0 2rem;
   background:rgb(40, 44, 52, 0.8);
