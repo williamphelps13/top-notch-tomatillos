@@ -2,10 +2,7 @@
 
 This is an application to access movie details through an API. The user can access a list of movies, can select any one of them, & be provided information about that specific film.
 
-<!--
-// If site is deployed, add this sentence:
-
-It can be accessed here through [site].](url) -->
+The application is deployed and can be [accessed online here](https://rottentomatillos.surge.sh/).
 
 ## Motivation and rubric
 
