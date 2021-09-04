@@ -10,7 +10,11 @@ This project was completed as a project at Turing School of Software & Design du
 
 [The rubric is linked here.](https://frontend.turing.edu/projects/module-3/rancid-tomatillos-v3.html)
 
-The goals and objectives were to gain competency with React fundamentals, learn how to test React components & asynchronous JS, practice refactoring, & create a multi-page UX using Router.
+## Goals and objectives
+
+The joint goals and objectives were to gain competency with React fundamentals, learn how to test React components & asynchronous JS, practice refactoring, & create a multi-page UX using Router.
+
+Hayley wanted to focus more on mastering flex, practice skills used in assessments, and deployment.
 
 ## Reflections and evolution
 
