@@ -34,20 +34,22 @@ class Movie extends Component {
         {!Object.keys(singleMovie).length ? <Loader item='movie information is'/> :
 
         <section className='movie-background' style={{ backgroundImage: `url(${backdrop_path})` }}>
-          <section className='movie-card'>
-            <h2 className='movie-title'>{title}</h2>
-            <p className='movie-rating'>★ {average_rating.toFixed(1)}</p>
-            <p className='movie-tagline'>{tagline ? taglineQuotes : ''}</p>
-            <p className='movie-overview'>{overview}</p>
-            <p className='movie-release'>{dayjs(release_date).format('YYYY')}</p>
-            <p className='movie-runtime'>{runtime ? runtimeMinutes : ''}</p>
-            <div className='genre-container'>
-              {genres.map(genre => <p className='movie-genres'>{genre}</p>)}
-            </div>
-          </section>
-          <Link to='/'>
-            <button className='back-button'>BACK</button>
-          </Link>
+          <section className='movie-container'>
+            <section className='movie-card'>
+              <h2 className='movie-title'>{title}</h2>
+              <p className='movie-rating'>★ {average_rating.toFixed(1)}</p>
+              <p className='movie-tagline'>{tagline ? taglineQuotes : ''}</p>
+              <p className='movie-overview'>{overview}</p>
+              <p className='movie-release'>{dayjs(release_date).format('YYYY')}</p>
+              <p className='movie-runtime'>{runtime ? runtimeMinutes : ''}</p>
+              <div className='genre-container'>
+                {genres.map(genre => <p className='movie-genres'>{genre}</p>)}
+              </div>
+            </section>
+            <Link to='/'>
+              <button className='back-button'>BACK</button>
+            </Link> 
+        </section>
         </section>
         }
       </div>
