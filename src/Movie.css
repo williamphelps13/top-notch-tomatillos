@@ -1,7 +1,6 @@
 .movie-background {
   display: flex; 
   justify-content: center;
-  align-items: center;
   background-size: cover;
   min-height: 85vh;
   flex-direction: row;
