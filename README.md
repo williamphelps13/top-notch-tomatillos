@@ -30,9 +30,11 @@ Built with Visual Studio Code
 
 [Project board on GitHub](https://github.com/williamphelps13/rancid-tomatillos/projects/1) 
 
-<!-- ## Access and use website
+## Access and use website
 
-[Explain how to navigate site.] -->
+When the user visits the site, they will be able to see a page full of movie posters. If they click a poster, they can see details about that movie. They can return to the origin posters page by clicking "BACK" on the page or the back button on their internet browser.
+
+After returning to the poster page, they can use the forward button on their browser to return to the previous movie information page, or they can click a new movie poster to see that movie information page instead.
 
 <!-- ## GIF
 
