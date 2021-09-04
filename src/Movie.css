@@ -39,7 +39,7 @@
 }
 
 .back-button:hover {
-  transform: scale(1.25) perspective(1px);  
+  transform: scale(1.07) perspective(1px);  
 }
 
 .movie-rating {
