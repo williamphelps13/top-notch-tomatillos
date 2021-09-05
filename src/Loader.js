@@ -11,7 +11,7 @@ const Loader = ({ item }) => {
         alt='Loading icon'
         className='loader-icon'
         src={loaderIcon}
-      ></img>   
+      ></img>  
     </div>
   )
 }
