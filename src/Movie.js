@@ -26,7 +26,15 @@ class Movie extends Component {
     const {singleMovie, error} = this.state;
   
     let {backdrop_path, title, average_rating, tagline, overview, release_date, runtime, genres} = singleMovie;
-    
+    if (error) {
+
+      return < Error message={error} /> 
+
+    } else if (!Object.keys(singleMovie).length) {
+
+      return <Loader item='movie information is'/>
+
+    } else {
       return (
         <section className='movie-background' style={{ backgroundImage: `url(${backdrop_path})` }}>
           <section className='movie-card'>
