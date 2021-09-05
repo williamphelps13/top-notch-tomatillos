@@ -22,10 +22,46 @@
   margin: 0;
 }
 
+.rating {
+  font-size: 1.8rem;
+  margin: 1rem 0 0 0;
+}
+
 .tagline {
   font-size: 1.5rem;
   font-style: italic;
   margin-top: 1.2rem;
+}
+
+.overview {
+  font-size: 1.2rem;
+}
+
+.genre-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.genres {
+  background: #880808;
+  border-radius: 1rem;
+  color: white;
+  font-size: 1.2rem;
+  margin: .5rem .1rem .5rem .1rem;
+  padding: 0.1rem 0.6rem 0.25rem 0.6rem;
+}
+
+.release {
+  font-size: 1.3rem; 
+  font-weight: bold; 
+  margin: 0;
+}
+
+.runtime {
+  margin: .4rem 0 1rem 0;
+  font-weight: bold;
 }
 
 .back-btn {
@@ -40,44 +76,4 @@
 
 .back-btn:hover {
   transform: scale(1.07) perspective(1px);  
-}
-
-.rating {
-  font-size: 1.8rem;
-  margin: 1rem 0 0 0;
-}
-
-.overview {
-  font-size: 1.2rem;
-}
-
-.genres {
-  background: #880808;
-  border-radius: 1rem;
-  color: white;
-  font-size: 1.2rem;
-  margin: .5rem .1rem .5rem .1rem;
-  padding: 0.1rem 0.6rem 0.25rem 0.6rem;
-}
-
-.genre-container {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.runtime {
-  margin: .4rem 0 1rem 0;
-  font-weight: bold;
-}
-
-.release {
-  font-size: 1.3rem; 
-  font-weight: bold; 
-  margin: 0;
-}
-
-.App-header {
-  padding-right: .2rem;
 }
