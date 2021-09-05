@@ -2,10 +2,7 @@
 
 This is an application to access movie details through an API. The user can access a list of movies, can select any one of them, & be provided information about that specific film.
 
-<!--
-// If site is deployed, add this sentence:
-
-It can be accessed here through [site].](url) -->
+The application is deployed and can be [accessed online here](https://rottentomatillos.surge.sh/).
 
 ## Motivation and rubric
 
@@ -13,13 +10,33 @@ This project was completed as a project at Turing School of Software & Design du
 
 [The rubric is linked here.](https://frontend.turing.edu/projects/module-3/rancid-tomatillos-v3.html)
 
-The goals and objectives were to gain competency with React fundamentals, learn how to test React components & asynchronous JS, practice refactoring, & create a multi-page UX using Router.
+## Goals and objectives
 
-<!-- ## Reflections
+The joint goals and objectives were to gain competency with React fundamentals, learn how to test React components & asynchronous JS, practice refactoring, & create a multi-page UX using Router.
 
-A challenge was _____.
+Hayley wanted to focus more on mastering flex, practice skills used in assessments, and deployment.
 
-Big successes were _____. -->
+<!-- Add William's goals/objectives -->
+
+## Reflections and evolution
+
+### Start of project
+
+A challenge was conditional rendering and ternary syntax.
+
+Big successes were setting up React components, application foundations, & implementing JSX.
+
+### Middle of project
+
+A challenge was setting up Router.
+
+A success was setting up stubbing.
+
+### End of project
+
+A challenge mastering Cypress.
+
+A success was getting the site deployed.
 
 ## Languages and technology
 
@@ -27,61 +44,31 @@ Written in JavaScript, HTML, CSS, & JSX
 
 Utilizes NPM, Node, Cypress, Router, & React
 
+Deployed on Surge
+
 Built with Visual Studio Code
 
 [Code stored on GitHub](https://github.com/williamphelps13/rancid-tomatillos)
 
 [Project board on GitHub](https://github.com/williamphelps13/rancid-tomatillos/projects/1) 
 
-<!-- 
+## Access and use website
 
-// The steps of this section will change if we end up deploying the site.
-## Repository install and setup
+When the user visits the application [here](https://rottentomatillos.surge.sh/), they will be able to see a page full of movie posters. If they click a poster, they can see details about that movie. They can return to the origin posters page by clicking "BACK" on the page or the back button on their internet browser.
 
-### Clone project repository
+After returning to the poster page, they can use the forward button on their browser to return to the previous movie information page, or they can click a new movie poster to see that movie information page instead.
 
-Enter the following command in the Terminal:
-`git clone https://github.com/hayleyw7/travel-tracker.git`
-
-### Navigate to folder
-
-Enter the following command in the Terminal:
-`cd travel-tracker`
-
-### Install dependencies
-
-Enter the following command in the Terminal:
-`npm install`
-
-### Run local host
-
-Enter the following command in the Terminal:
-`npm start`
-
-## API install and setup
-
-### Clone API repository
-
-Enter the following command in the Terminal:
-`git clone https://github.com/williamphelps13/rancid-tomatillos/projects/1.git`
-
-### Navigate to folder
-
-Enter the following command in the Terminal:
-`http://localhost:8080/`-->
-
-<!-- ## Access and use website
-
-[Explain how to navigate site.] -->
+Each page has a unique URL that can be bookmarked and/or manually typed in the address bar.
 
 <!-- ## GIF
 
 ![rancid tomatillos gif](./src/images/rancid.gif)  -->
 
-<!-- ## Future addition
+## Future additions
 
-* [1st addition]
-* [2nd edition] -->
+* The user will be able to add movies to a list of favorites.
+* The user will be able to search movies by name.
+* The user will be able to search movies by genre.
 
 ## Contributors
 
