@@ -33,6 +33,17 @@ class App extends Component {
         
         <Route exact path='/' 
           render={() => {
+        
+          if (error) {
+
+            return < Error message={error} /> 
+
+          } else if (!movies.length) {
+
+            return <Loader item='movie posters are' />
+
+          } else {
+
             return <Posters posters={movies}/>
           } 
         }}
