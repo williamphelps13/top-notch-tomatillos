@@ -16,7 +16,7 @@ export const cleanMovieData = (data) => {
       backdrop_path: data.movie.backdrop_path,
       title: data.movie.title,    
       average_rating: `★ ${data.movie.average_rating.toFixed(1)}`,
-      tagline: `"${data.movie.tagline}"`,
+      tagline: data.movie.tagline ? `"${data.movie.tagline}"` : '',
       overview: data.movie.overview,
       release_date: dayjs(data.movie.release_date).format('YYYY'),
       runtime: data.movie.runtime ? `${data.movie.runtime} Minutes` : '',
