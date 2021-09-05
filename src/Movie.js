@@ -39,18 +39,18 @@ class Movie extends Component {
         <section className='movie-background' style={{ backgroundImage: `url(${backdrop_path})` }}>
           <section className='movie-container'>
             <section className='movie-card'>
-              <h2 className='movie-title'>{title}</h2>
-              <p className='movie-rating'>{average_rating}</p>
-              <p className='movie-tagline'>{tagline}</p>
-              <p className='movie-overview'>{overview}</p>
-              <p className='movie-release'>{release_date}</p>
-              <p className='movie-runtime'>{runtime}</p>
+              <h2 className='title'>{title}</h2>
+              <p className='rating'>{average_rating}</p>
+              <p className='tagline'>{tagline}</p>
+              <p className='overview'>{overview}</p>
+              <p className='release'>{release_date}</p>
+              <p className='runtime'>{runtime}</p>
               <div className='genre-container'>
-                {genres.map(genre => <p className='movie-genres'>{genre}</p>)}
+                {genres.map(genre => <p className='genres'>{genre}</p>)}
               </div>
             </section>
             <Link to='/'>
-              <button className='back-button'>BACK</button>
+              <button className='back-btn'>BACK</button>
             </Link> 
           </section>
         </section>
