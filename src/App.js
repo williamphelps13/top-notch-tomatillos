@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import './App.css';
-import Posters from './Posters'
-import Movie from './Movie'
-import Loader from './Loader'
-import Error from './Error'
-import { fetchMovies } from './apiCalls';
+import Error from './Error';
+import Loader from './Loader';
+import Posters from './Posters';
+import Movie from './Movie';
+import { getData } from './apiCalls';
+import { cleanPosterData } from './data-cleaning';
 import { Route } from 'react-router-dom';
 
 class App extends Component {
@@ -17,21 +18,25 @@ class App extends Component {
   }
   
   componentDidMount() {
-    fetchMovies()
-    .then(data => this.setState({movies: data.movies}))
+    getData('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
+    .then(data => cleanPosterData(data))
+    .then(data => this.setState({movies: data}))
     .catch(error => this.setState({error: error.message}))
   }
 
   render() {
     const {movies, error} = this.state;
-    
+   
     return (
       <main className="App">
         <h1 className="App-header">Rancid Tomatillos</h1>
-
-        {error && <Error />} 
         
-        <Route exact path='/' render={() => !movies.length && !error ? <Loader item='movie posters are' /> : <Posters posters={movies} />}/>
+        <Route exact path='/' 
+          render={() => {
+            return <Posters posters={movies}/>
+          } 
+        }}
+      />
 
         <Route 
           exact path='/:id' 
