@@ -27,7 +27,7 @@ class Movie extends Component {
   
     let {backdrop_path, title, average_rating, tagline, overview, release_date, runtime, genres} = singleMovie;
     if (error) {
-
+      
       return < Error message={error} /> 
 
     } else if (!Object.keys(singleMovie).length) {
