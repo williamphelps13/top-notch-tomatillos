@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import './Movie.css';
-import Error from './Error'
-import Loader from './Loader'
-import { getData } from './apiCalls';
-import { cleanMovieData } from './data-cleaning';
+import Error from '../Error/Error'
+import Loader from '../Loader/Loader'
+import { getData } from '../utilities/apiCalls';
+import { cleanMovieData } from '../utilities/data-cleaning';
 import { Link } from 'react-router-dom';
 
 class Movie extends Component {
