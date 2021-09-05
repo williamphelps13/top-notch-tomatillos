@@ -16,6 +16,8 @@ The joint goals and objectives were to gain competency with React fundamentals, 
 
 Hayley wanted to focus more on mastering flex, practice skills used in assessments, and deployment.
 
+<!-- Add William's goals/objectives -->
+
 ## Reflections and evolution
 
 ### Start of project
@@ -24,13 +26,13 @@ A challenge was conditional rendering and ternary syntax.
 
 Big successes were setting up React components, application foundations, & implementing JSX.
 
-## Middle of project
+### Middle of project
 
 A challenge was setting up Router.
 
 A success was setting up stubbing.
 
-## End of project
+### End of project
 
 A challenge mastering Cypress.
 
@@ -41,6 +43,8 @@ A success was getting the site deployed.
 Written in JavaScript, HTML, CSS, & JSX
 
 Utilizes NPM, Node, Cypress, Router, & React
+
+Deployed on Surge
 
 Built with Visual Studio Code
 
