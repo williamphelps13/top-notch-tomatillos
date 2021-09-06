@@ -61,7 +61,7 @@ After returning to the poster page, they can use the forward button on their bro
 Each page has a unique URL that can be bookmarked and/or manually typed in the address bar.
 
 ## GIF
-![rancid tomatillos gif](./src/gifs/Posters-Page.gif)
+![rancid tomatillos gif](./gif/Posters-Page)
 
 ## Future additions
 
