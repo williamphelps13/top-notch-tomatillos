@@ -43,7 +43,7 @@ describe('Posters Page', () => {
   it('Should not render movie details page', () => {
     cy.get('button[class="back-button"]')
       .should('not.exist')
-    cy.get('h2[class="movie-title"]')
+    cy.get('h2[class="title"]')
       .should('not.exist')
   });
 
@@ -54,7 +54,7 @@ describe('Posters Page', () => {
       .should('be.visible')
     cy.get('button[class="back-button"]')
       .should('not.exist')
-    cy.get('h2[class="movie-title"]')
+    cy.get('h2[class="title"]')
       .should('not.exist')
   });
 
@@ -65,14 +65,14 @@ describe('Posters Page', () => {
       .should('be.visible')
     cy.get('button[class="back-button"]')
       .should('not.exist')
-    cy.get('h2[class="movie-title"]')
+    cy.get('h2[class="title"]')
       .should('not.exist')
   });
   
   it('Should be able to click a movie poster & be directed to the corresponding movie page', () => {
     cy.get('img[alt="Donald Duck Movie Poster and Button"]')
       .click()
-      .get('h2')
+      .get('h2[class="title"]')
       .should('contain', 'Donald Duck')
   });
 
