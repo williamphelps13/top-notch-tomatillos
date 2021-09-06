@@ -75,4 +75,10 @@ describe('Posters Page', () => {
       .get('h2')
       .should('contain', 'Donald Duck')
   });
+
+  it('Should have corresponding movie id url when displaying a particular movie page', () => {
+    cy.get('img[id=337401]')
+    .click()
+    cy.url().should('eq', 'http://localhost:3000/337401')
+  });
 });
