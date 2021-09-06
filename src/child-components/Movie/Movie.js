@@ -3,7 +3,7 @@ import './Movie.css';
 import Error from '../Error/Error'
 import Loader from '../Loader/Loader'
 import { getData } from '../../utilities/apiCalls';
-import { cleanMovieData } from '../../utilities/data-cleaning';
+import { cleanMovieData } from '../../utilities/dataCleaning';
 import { Link } from 'react-router-dom';
 
 class Movie extends Component {
