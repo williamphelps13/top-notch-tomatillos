@@ -18,8 +18,6 @@ Hayley also wanted to focus on mastering flex-box, practice React skills used in
 
 In addition to the joint goals, William wanted to focus on data-cleaning, Cypress, and conditional rendering for error-handling.
 
-<!-- Add William's goals/objectives -->
-
 ## Reflections and evolution
 
 ### Start of project
@@ -62,9 +60,7 @@ After returning to the poster page, they can use the forward button on their bro
 
 Each page has a unique URL that can be bookmarked and/or manually typed in the address bar.
 
-<!-- ## GIF
-
-![rancid tomatillos gif](./src/images/rancid.gif)  -->
+## GIF
 
 ## Future additions
 
