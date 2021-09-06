@@ -1,42 +1,42 @@
 # Rancid Tomatillos
 
-This is an application to access movie details through an API. The user can access a list of movies, can select any one of them, & be provided information about that specific film.
+This is an application to display movie posters and then access movie details through an API. The user can access a list of movie posters, select any one of them, & be provided information about that specific film including its rating, description, release year, tagline, running time, and genre(s).
 
 The application is deployed and can be [accessed online here](https://rottentomatillos.surge.sh/).
 
 ## Motivation and rubric
 
-This project was completed as a project at Turing School of Software & Design during Module 3.
+This project was a paired project for Turing School of Software & Design during Module 3.
 
-[The rubric is linked here.](https://frontend.turing.edu/projects/module-3/rancid-tomatillos-v3.html)
+[The project rubric is linked here.](https://frontend.turing.edu/projects/module-3/rancid-tomatillos-v3.html)
 
 ## Goals and objectives
 
-The joint goals and objectives were to gain competency with React fundamentals, learn how to test React components & asynchronous JS, practice refactoring, & create a multi-page UX using Router.
+The joint goals of both partners were to gain competency with React fundamentals, learn how to test React components & asynchronous JS, practice refactoring, & create a multi-page UX using Router.
 
-Hayley wanted to focus more on mastering flex, practice skills used in assessments, and deployment.
+Hayley also wanted to focus on mastering flex-box, practice React skills used in upcoming assessments, terinaries, and successful site deployment.
 
-<!-- Add William's goals/objectives -->
+In addition to the joint goals, William wanted to focus on data-cleaning, Cypress, and conditional rendering for error-handling.
 
 ## Reflections and evolution
 
 ### Start of project
 
-A challenge was conditional rendering and ternary syntax.
+A challenge we encountered was conditional rendering and ternary syntax.
 
 Big successes were setting up React components, application foundations, & implementing JSX.
 
 ### Middle of project
 
-A challenge was setting up Router.
+A challenge was setting up Router especially with match and the need to convert our Movie functional component into a class component.
 
-A success was setting up stubbing.
+A success was setting up stubbing of api calls in Cypress.
 
 ### End of project
 
-A challenge mastering Cypress.
+A challenge towards the end of the project was testing for 500 and 404 errors and URL pathnames.
 
-A success was getting the site deployed.
+Big successes were getting the site deployed and (despite already feeling satisfied) finding numerous opportunities to DRY up our code.
 
 ## Languages and technology
 
@@ -54,15 +54,13 @@ Built with Visual Studio Code
 
 ## Access and use website
 
-When the user visits the application [here](https://rottentomatillos.surge.sh/), they will be able to see a page full of movie posters. If they click a poster, they can see details about that movie. They can return to the origin posters page by clicking "BACK" on the page or the back button on their internet browser.
+When the user visits the application [here](https://rottentomatillos.surge.sh/), they will be able to see a page tiled with movie posters. If they click a poster, they can see details for that movie. They can return to the original posters page by clicking "BACK" on the details page or the back button on their internet browser.
 
 After returning to the poster page, they can use the forward button on their browser to return to the previous movie information page, or they can click a new movie poster to see that movie information page instead.
 
 Each page has a unique URL that can be bookmarked and/or manually typed in the address bar.
 
-<!-- ## GIF
-
-![rancid tomatillos gif](./src/images/rancid.gif)  -->
+## GIF
 
 ## Future additions
 
