@@ -1,12 +1,12 @@
 # Rancid Tomatillos
 
-This is an application to display movie posters and then access movie details through an API. The user can access a list of movie posters, select any one of them, & be provided information about that specific film including its rating, description, release year, tagline, running time, and genre(s).
+This is an application to display movie posters and then access movie details through an API. The user can access a list of movie posters, select any one of them, & be provided information about that specific film, including its rating, description, release year, tagline, running time, and genre(s).
 
 The application is deployed and can be [accessed online here](https://rottentomatillos.surge.sh/).
 
 ## Motivation and rubric
 
-This project was a paired project for Turing School of Software & Design during Module 3.
+This project was a paired project for Turing School of Software & Design during module 3.
 
 [The project rubric is linked here.](https://frontend.turing.edu/projects/module-3/rancid-tomatillos-v3.html)
 
@@ -28,7 +28,7 @@ Big successes were setting up React components, application foundations, & imple
 
 ### Middle of project
 
-A challenge was setting up Router especially with match and the need to convert our Movie functional component into a class component.
+A challenge was setting up Router, especially with match and the need to convert our Movie functional component into a class component.
 
 A success was setting up stubbing of api calls in Cypress.
 
@@ -61,6 +61,7 @@ After returning to the poster page, they can use the forward button on their bro
 Each page has a unique URL that can be bookmarked and/or manually typed in the address bar.
 
 ## GIF
+![rancid tomatillos gif](./src/gifs/Posters-Page.gif)
 
 ## Future additions
 
