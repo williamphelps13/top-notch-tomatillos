@@ -15,7 +15,7 @@ const Posters = ({ posters }) => {
       <img
         src={poster_path}
         className='poster-icon'
-        alt={`${{title}} Movie Poster and Button`}
+        alt={`${title} Movie Poster and Button`}
         id={id}
       />
       </Link>
