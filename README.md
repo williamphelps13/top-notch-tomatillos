@@ -18,6 +18,8 @@ Hayley also wanted to focus on mastering flex-box, practice React skills used in
 
 In addition to the joint goals, William wanted to focus on data-cleaning, Cypress, and conditional rendering for error-handling.
 
+<!-- Add William's goals/objectives -->
+
 ## Reflections and evolution
 
 ### Start of project
