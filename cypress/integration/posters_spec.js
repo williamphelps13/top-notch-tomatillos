@@ -4,6 +4,10 @@ describe('Posters Page', () => {
     cy.loadPostersPage()
   })
 
+  it('Should have homepage url when displaying posters page', () => {
+    cy.url().should('eq', 'http://localhost:3000/')
+  });
+
   it('Should be able to visit the page and render the page heading', () => {
     cy.get('h1')
       .contains('Rancid Tomatillos')
@@ -66,7 +70,7 @@ describe('Posters Page', () => {
   });
   
   it('Should be able to click a movie poster & be directed to the corresponding movie page', () => {
-    cy.get('img[alt="Donald Duck"]')
+    cy.get('img[alt="Donald Duck Movie Poster and Button"]')
       .click()
       .get('h2')
       .should('contain', 'Donald Duck')
