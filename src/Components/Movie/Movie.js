@@ -18,7 +18,7 @@ class Movie extends Component {
   componentDidMount() {
     getData(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${this.props.movieID}`)
     .then(data => cleanMovieData(data))
-    .then(data => this.setState({singleMovie: data.movie}))
+    .then(data => this.setState({singleMovie: data}))
     .catch(error => this.setState({error: error.message}))
   }
 
