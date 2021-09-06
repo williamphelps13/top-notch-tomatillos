@@ -17,44 +17,39 @@ class App extends Component {
     }
   }
   
-  componentDidMount() {
+  componentDidMount = () => {
     getData('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
     .then(data => cleanPosterData(data))
     .then(data => this.setState({movies: data}))
     .catch(error => this.setState({error: error.message}))
   }
 
-  render() {
+  conditionalPostersDisplay = () => {
     const {movies, error} = this.state;
-   
+
+    return error ? <Error message={error} page='movies' /> 
+      : !movies.length ? <Loader item='movie posters are' />
+      : <Posters posters={movies} />
+  } 
+
+
+  parseID = (match) => {
+    return parseInt(match.params.id);
+  }
+
+  render = () => {
+
     return (
       <main className="App">
         <h1 className="App-header">Rancid Tomatillos</h1>
         
         <Route exact path='/' 
-          render={() => {
-        
-          if (error) {
-
-            return < Error message={error} /> 
-
-          } else if (!movies.length) {
-
-            return <Loader item='movie posters are' />
-
-          } else {
-
-            return <Posters posters={movies}/>
-          } 
-        }}
-      />
+          render={() => this.conditionalPostersDisplay()}
+        />
 
         <Route 
           exact path='/:id' 
-          render={({ match }) => {
-            const clickedMovieID = parseInt(match.params.id);
-            return <Movie movieID={clickedMovieID} /> 
-          }}
+          render={({ match }) => <Movie movieID={this.parseID(match)} />}
         />
         
       </main>
