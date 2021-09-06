@@ -1,12 +1,14 @@
 # Rancid Tomatillos
 
-This is an application to display movie posters and then access movie details through an API. The user can access a list of movie posters, select any one of them, & be provided information about that specific film including its rating, description, release year, tagline, running time, and genre(s).
+<img width="1417" alt="Screen Shot 2021-09-06 at 5 24 11 PM" src="https://user-images.githubusercontent.com/22990386/132265533-a180eb44-a65d-4a13-984e-8b74b0e3121c.png">
+
+This is an application to display movie posters and then access movie details through an API. The user can access a list of movie posters, select any one of them, & be provided information about that specific film, including its rating, description, release year, tagline, running time, and genre(s).
 
 The application is deployed and can be [accessed online here](https://rottentomatillos.surge.sh/).
 
 ## Motivation and rubric
 
-This project was a paired project for Turing School of Software & Design during Module 3.
+This project was a paired project for Turing School of Software & Design during module 3.
 
 [The project rubric is linked here.](https://frontend.turing.edu/projects/module-3/rancid-tomatillos-v3.html)
 
@@ -28,7 +30,7 @@ Big successes were setting up React components, application foundations, & imple
 
 ### Middle of project
 
-A challenge was setting up Router especially with match and the need to convert our Movie functional component into a class component.
+A challenge was setting up Router, especially with match and the need to convert our Movie functional component into a class component.
 
 A success was setting up stubbing of api calls in Cypress.
 
@@ -60,7 +62,17 @@ After returning to the poster page, they can use the forward button on their bro
 
 Each page has a unique URL that can be bookmarked and/or manually typed in the address bar.
 
-## GIF
+## Screenshots
+
+### Movie Posters Page
+<img width="1417" alt="Screen Shot 2021-09-06 at 5 24 25 PM" src="https://user-images.githubusercontent.com/22990386/132265588-029bab0d-d06f-435b-b504-e67d3ab89abe.png">
+
+### Movie Details Page
+<img width="1417" alt="Screen Shot 2021-09-06 at 5 24 44 PM" src="https://user-images.githubusercontent.com/22990386/132265599-73f5f0ee-0558-4522-922c-e428af0cddf6.png">
+
+### 404 Error Page
+<img width="1431" alt="Screen Shot 2021-09-06 at 5 25 02 PM" src="https://user-images.githubusercontent.com/22990386/132265602-2b72c931-27b3-40a8-bb42-e2c7006b3c43.png">
+505 Page has same format with different text.
 
 ## Future additions
 
