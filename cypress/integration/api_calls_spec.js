@@ -18,4 +18,9 @@ describe('API Calls Error Messages', () => {
       .contains('404 error')
   })
   
- 
+  it('Should be able to display 404 error on movie page', () => {
+    cy.goToMovie404Page();
+    cy.get('p[class="error-message"]')
+      .contains('404 error')
+  })
+})
