@@ -11,16 +11,16 @@ export const cleanPosterData = (data) => {
 }
 
 export const cleanMovieData = (data) => {
+  const {backdrop_path, title, average_rating, tagline, overview, release_date, runtime, genres} = data.movie;
+
   return data = {
-    movie: {
-      backdrop_path: data.movie.backdrop_path,
-      title: data.movie.title,    
-      average_rating: `★ ${data.movie.average_rating.toFixed(1)}`,
-      tagline: data.movie.tagline ? `"${data.movie.tagline}"` : '',
-      overview: data.movie.overview,
-      release_date: dayjs(data.movie.release_date).format('YYYY'),
-      runtime: data.movie.runtime ? `${data.movie.runtime} Minutes` : '',
-      genres: data.movie.genres
-    }
+      backdrop_path: backdrop_path,
+      title: title,    
+      average_rating: `★ ${average_rating.toFixed(1)}`,
+      tagline: tagline ? `"${tagline}"` : '',
+      overview: overview,
+      release_date: dayjs(release_date).format('YYYY'),
+      runtime: runtime ? `${runtime} Minutes` : '',
+      genres: genres
   }
 }

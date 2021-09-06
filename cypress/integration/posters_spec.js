@@ -4,6 +4,10 @@ describe('Posters Page', () => {
     cy.loadPostersPage()
   })
 
+  it('Should have homepage url when displaying posters page', () => {
+    cy.url().should('eq', 'http://localhost:3000/')
+  });
+
   it('Should be able to visit the page and render the page heading', () => {
     cy.get('h1')
       .contains('Rancid Tomatillos')
@@ -39,7 +43,7 @@ describe('Posters Page', () => {
   it('Should not render movie details page', () => {
     cy.get('button[class="back-button"]')
       .should('not.exist')
-    cy.get('h2[class="movie-title"]')
+    cy.get('h2[class="title"]')
       .should('not.exist')
   });
 
@@ -50,7 +54,7 @@ describe('Posters Page', () => {
       .should('be.visible')
     cy.get('button[class="back-button"]')
       .should('not.exist')
-    cy.get('h2[class="movie-title"]')
+    cy.get('h2[class="title"]')
       .should('not.exist')
   });
 
@@ -61,14 +65,20 @@ describe('Posters Page', () => {
       .should('be.visible')
     cy.get('button[class="back-button"]')
       .should('not.exist')
-    cy.get('h2[class="movie-title"]')
+    cy.get('h2[class="title"]')
       .should('not.exist')
   });
   
   it('Should be able to click a movie poster & be directed to the corresponding movie page', () => {
-    cy.get('img[alt="Donald Duck"]')
+    cy.get('img[alt="Donald Duck Movie Poster and Button"]')
       .click()
-      .get('h2')
+      .get('h2[class="title"]')
       .should('contain', 'Donald Duck')
+  });
+
+  it('Should have corresponding movie id url when displaying a particular movie page', () => {
+    cy.get('img[id=337401]')
+    .click()
+    cy.url().should('eq', 'http://localhost:3000/337401')
   });
 });
