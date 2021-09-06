@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import './App.css';
-import Error from './Error';
-import Loader from './Loader';
-import Posters from './Posters';
-import Movie from './Movie';
-import { getData } from './apiCalls';
-import { cleanPosterData } from './data-cleaning';
+import Error from './child-components/Error/Error';
+import Loader from './child-components/Loader/Loader';
+import Posters from './child-components/Posters/Posters';
+import Movie from './child-components/Movie/Movie';
+import { getData } from './utilities/apiCalls';
+import { cleanPosterData } from './utilities/dataCleaning';
 import { Route } from 'react-router-dom';
 
 class App extends Component {

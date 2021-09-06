@@ -1,0 +1,79 @@
+.movie-background {
+  background-size: cover;
+  display: flex; 
+  flex-direction: row;
+  justify-content: center;
+  min-height: 85vh;
+  padding: 0;
+}
+
+.movie-card {
+  background:rgb(40, 44, 52, 0.8);
+  border-radius: .5rem;
+  color: white;
+  font-weight: 500;
+  margin: 1.8rem 1.9rem 0 2rem;
+  max-width: 40rem;
+  padding: 1.5rem 2rem 1.6rem 2rem;
+}
+
+.title {
+  font-size: 3.2rem;
+  margin: 0;
+}
+
+.rating {
+  font-size: 1.8rem;
+  margin: 1rem 0 0 0;
+}
+
+.tagline {
+  font-size: 1.5rem;
+  font-style: italic;
+  margin-top: 1.2rem;
+}
+
+.overview {
+  font-size: 1.2rem;
+}
+
+.genre-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.genres {
+  background: #880808;
+  border-radius: 1rem;
+  color: white;
+  font-size: 1.2rem;
+  margin: .5rem .1rem .5rem .1rem;
+  padding: 0.1rem 0.6rem 0.25rem 0.6rem;
+}
+
+.release {
+  font-size: 1.3rem; 
+  font-weight: bold; 
+  margin: 0;
+}
+
+.runtime {
+  margin: .4rem 0 1rem 0;
+  font-weight: bold;
+}
+
+.back-btn {
+  background: white;
+  border: 0;
+  border-radius: 10rem;
+  color: rgb(40, 44, 52, 0.8);
+  font-size: 1.8rem;
+  margin: 1.7rem 0 3.7rem 0;
+  padding: 0.5rem 0.9rem 0.4rem 0.9rem;
+}
+
+.back-btn:hover {
+  transform: scale(1.07) perspective(1px);  
+}
