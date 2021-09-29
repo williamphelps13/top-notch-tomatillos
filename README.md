@@ -1,4 +1,4 @@
-# Rancid Tomatillos
+# Top-Notch Tomatillos
 
 <img width="1417" alt="Screen Shot 2021-09-06 at 5 24 11 PM" src="https://user-images.githubusercontent.com/22990386/132265533-a180eb44-a65d-4a13-984e-8b74b0e3121c.png">
 
@@ -50,9 +50,9 @@ Deployed on Surge
 
 Built with Visual Studio Code
 
-[Code stored on GitHub](https://github.com/williamphelps13/rancid-tomatillos)
+[Code stored on GitHub](https://github.com/williamphelps13/top-notch-tomatillos)
 
-[Project board on GitHub](https://github.com/williamphelps13/rancid-tomatillos/projects/1) 
+[Project board on GitHub](https://github.com/williamphelps13/top-notch-tomatillos/projects/1) 
 
 ## Access and use website
 
