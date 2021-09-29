@@ -41,7 +41,7 @@ class App extends Component {
 
     return (
       <main className="App">
-        <h1 className="App-header">Rancid Tomatillos</h1>
+        <h1 className="App-header">Top-Notch Tomatillos</h1>
         
         <Route exact path='/' 
           render={() => this.conditionalPostersDisplay()}
