@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, {useState, useEffect} from 'react'
 import './App.css'
 import Error from '../Error/Error'
 import Loader from '../Loader/Loader'
@@ -7,20 +7,15 @@ import Movie from '../Movie/Movie'
 import { getPosterData } from '../../utilities/apiCalls'
 import { Route } from 'react-router-dom'
 
-class App extends Component {
-  constructor() {
-    super()
-    this.state = {
-      movies: [],
-      error: ''
-    }
-  }
+const App = () => {
+  const [movies, setMovies] = useState([])
+  const [error, setError] = useState('')
   
-  componentDidMount = () => {
+  useEffect(() => {
     getPosterData()
-    .then(data => this.setState({movies: data}))
-    .catch(error => this.setState({error: error.message}))
-  }
+      .then(data => setMovies(data))
+      .catch(error => setError(error.message))
+  })
 
   conditionalPostersDisplay = () => {
     const {movies, error} = this.state
@@ -29,30 +24,28 @@ class App extends Component {
       : !movies.length ? <Loader item='movie posters are' />
       : <Posters posters={movies} />
   } 
+  
+  return (
+    <main className="App">
+      <h1 className="App-header">Rancid Tomatillos</h1>
+      
+      <Route exact path='/' 
+        render={() =>
+          error ? <Error message={error} page='movies' /> 
 
+          : !movies.length ? <Loader item='movie posters are' />
 
-  parseID = (match) => {
-    return parseInt(match.params.id)
-  }
+          : <Posters posters={movies} />
+        }
+      />
 
-  render = () => {
+      <Route 
+        exact path='/:id' 
+        render={({ match }) => <Movie movieID={parseInt(match.params.id)} />}
+      />
 
-    return (
-      <main className="App">
-        <h1 className="App-header">Rancid Tomatillos</h1>
-        
-        <Route exact path='/' 
-          render={() => this.conditionalPostersDisplay()}
-        />
-
-        <Route 
-          exact path='/:id' 
-          render={({ match }) => <Movie movieID={this.parseID(match)} />}
-        />
-        
-      </main>
-    );
-  }
-} 
+    </main>
+  )
+}
 
 export default App
