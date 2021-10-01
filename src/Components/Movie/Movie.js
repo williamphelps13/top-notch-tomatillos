@@ -1,13 +1,13 @@
-import React, { Component } from 'react';
-import './Movie.css';
-import Error from '../Error/Error';
-import Loader from '../Loader/Loader';
-import { getData } from '../../utilities/apiCalls';
-import { Link } from 'react-router-dom';
+import React, { Component } from 'react'
+import './Movie.css'
+import Error from '../Error/Error'
+import Loader from '../Loader/Loader'
+import { getMovieData } from '../../utilities/apiCalls'
+import { Link } from 'react-router-dom'
 
 class Movie extends Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       singleMovie: {},
       error: ''
@@ -21,7 +21,7 @@ class Movie extends Component {
   }
 
   displayMovieCard = () => {
-    const {backdrop_path, title, average_rating, tagline, overview, release_date, runtime, genres} = this.state.singleMovie;
+    const {backdrop_path, title, average_rating, tagline, overview, release_date, runtime, genres} = this.state.singleMovie
 
     return (
       <section className='movie-background' style={{ backgroundImage: `url(${backdrop_path})` }}>
@@ -46,7 +46,7 @@ class Movie extends Component {
   }
 
   conditionalPostersDisplay = () => {
-    const {singleMovie, error} = this.state;
+    const {singleMovie, error} = this.state
 
     return error ? <Error message={error} page='movie information' /> 
       : !Object.keys(singleMovie).length ? <Loader item='movie information is' /> 
@@ -58,4 +58,4 @@ class Movie extends Component {
   }
 }
 
-export default Movie;
+export default Movie

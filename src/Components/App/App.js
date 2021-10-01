@@ -1,15 +1,15 @@
-import React, { Component } from 'react';
-import './App.css';
-import Error from '../Error/Error';
-import Loader from '../Loader/Loader';
-import Posters from '../Posters/Posters';
-import Movie from '../Movie/Movie';
-import { getData } from '../../utilities/apiCalls';
-import { Route } from 'react-router-dom';
+import React, { Component } from 'react'
+import './App.css'
+import Error from '../Error/Error'
+import Loader from '../Loader/Loader'
+import Posters from '../Posters/Posters'
+import Movie from '../Movie/Movie'
+import { getPosterData } from '../../utilities/apiCalls'
+import { Route } from 'react-router-dom'
 
 class App extends Component {
   constructor() {
-    super();
+    super()
     this.state = {
       movies: [],
       error: ''
@@ -23,7 +23,7 @@ class App extends Component {
   }
 
   conditionalPostersDisplay = () => {
-    const {movies, error} = this.state;
+    const {movies, error} = this.state
 
     return error ? <Error message={error} page='movies' /> 
       : !movies.length ? <Loader item='movie posters are' />
@@ -32,7 +32,7 @@ class App extends Component {
 
 
   parseID = (match) => {
-    return parseInt(match.params.id);
+    return parseInt(match.params.id)
   }
 
   render = () => {
@@ -55,4 +55,4 @@ class App extends Component {
   }
 } 
 
-export default App;
+export default App

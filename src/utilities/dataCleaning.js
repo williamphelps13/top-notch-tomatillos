@@ -1,4 +1,4 @@
-import dayjs from 'dayjs';
+import dayjs from 'dayjs'
 
 export const cleanPosterData = (data) => {
   return data.movies.map(movie => {
@@ -11,7 +11,7 @@ export const cleanPosterData = (data) => {
 }
 
 export const cleanMovieData = (data) => {
-  const {backdrop_path, title, average_rating, tagline, overview, release_date, runtime, genres} = data.movie;
+  const {backdrop_path, title, average_rating, tagline, overview, release_date, runtime, genres} = data.movie
 
   return data = {
       backdrop_path: backdrop_path,

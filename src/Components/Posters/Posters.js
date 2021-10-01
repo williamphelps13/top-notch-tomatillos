@@ -1,11 +1,11 @@
-import React from 'react';
-import './Posters.css';
-import { Link } from 'react-router-dom';
+import React from 'react'
+import './Posters.css'
+import { Link } from 'react-router-dom'
 
 const Posters = ({ posters }) => {
 
   const moviePosters = posters.map(poster => {
-    const {id, poster_path, title} = poster;
+    const {id, poster_path, title} = poster
 
     return (
       <Link
@@ -29,4 +29,4 @@ const Posters = ({ posters }) => {
   )
 }
 
-export default Posters;
+export default Posters

@@ -1,5 +1,5 @@
 import React from 'react'
-import './Error.css';
+import './Error.css'
 import errorIcon from './error.png'
 
 const Error = ({ message, page }) => {
@@ -16,4 +16,4 @@ const Error = ({ message, page }) => {
   )
 }
 
-export default Error;
+export default Error
