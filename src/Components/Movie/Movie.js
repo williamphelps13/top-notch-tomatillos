@@ -17,7 +17,6 @@ const Movie = ({ movieID }) => {
     .catch(error => setError(error.message))
   })
   
-
   return (
     error ? <Error message={error} page='movie information' /> 
 
