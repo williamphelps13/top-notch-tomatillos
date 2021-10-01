@@ -5,7 +5,6 @@ import Loader from '../Loader/Loader';
 import Posters from '../Posters/Posters';
 import Movie from '../Movie/Movie';
 import { getData } from '../../utilities/apiCalls';
-import { cleanPosterData } from '../../utilities/dataCleaning';
 import { Route } from 'react-router-dom';
 
 class App extends Component {
@@ -18,8 +17,7 @@ class App extends Component {
   }
   
   componentDidMount = () => {
-    getData('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
-    .then(data => cleanPosterData(data))
+    getPosterData()
     .then(data => this.setState({movies: data}))
     .catch(error => this.setState({error: error.message}))
   }
