@@ -16,14 +16,7 @@ const App = () => {
       .then(data => setMovies(data))
       .catch(error => setError(error.message))
   })
-
-  conditionalPostersDisplay = () => {
-    const {movies, error} = this.state
-
-    return error ? <Error message={error} page='movies' /> 
-      : !movies.length ? <Loader item='movie posters are' />
-      : <Posters posters={movies} />
-  } 
+  
   
   return (
     <main className="App">
