@@ -16,14 +16,7 @@ const Movie = ({ movieID }) => {
     .then(data => setSingleMovie(data))
     .catch(error => setError(error.message))
   })
-
-  conditionalPostersDisplay = () => {
-    const {singleMovie, error} = this.state
-
-    return error ? <Error message={error} page='movie information' /> 
-      : !Object.keys(singleMovie).length ? <Loader item='movie information is' /> 
-      : this.displayMovieCard()
-  }
+  
 
   return (
     error ? <Error message={error} page='movie information' /> 
