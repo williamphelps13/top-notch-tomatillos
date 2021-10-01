@@ -3,7 +3,6 @@ import './Movie.css';
 import Error from '../Error/Error';
 import Loader from '../Loader/Loader';
 import { getData } from '../../utilities/apiCalls';
-import { cleanMovieData } from '../../utilities/dataCleaning';
 import { Link } from 'react-router-dom';
 
 class Movie extends Component {
@@ -16,8 +15,7 @@ class Movie extends Component {
   }
 
   componentDidMount() {
-    getData(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${this.props.movieID}`)
-    .then(data => cleanMovieData(data))
+    getMovieData(this.props.movieID)
     .then(data => this.setState({singleMovie: data}))
     .catch(error => this.setState({error: error.message}))
   }
