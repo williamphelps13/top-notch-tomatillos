@@ -1,26 +1,24 @@
 import dayjs from 'dayjs'
 
 export const cleanPosterData = (data) => {
-  return data.movies.map(movie => {
+  return data.results.map(movie => {
     return {
       id: movie.id, 
-      poster_path: movie.poster_path, 
+      poster_path: `https://image.tmdb.org/t/p/w500${movie.poster_path}`, 
       title: movie.title
     }
   })
 }
 
 export const cleanMovieData = (data) => {
-  const {backdrop_path, title, average_rating, tagline, overview, release_date, runtime, genres} = data.movie
-
-  return data = {
-      backdrop_path: backdrop_path,
-      title: title,    
-      average_rating: `★ ${average_rating.toFixed(1)}`,
-      tagline: tagline ? `"${tagline}"` : '',
-      overview: overview,
-      release_date: dayjs(release_date).format('YYYY'),
-      runtime: runtime ? `${runtime} Minutes` : '',
-      genres: genres
+  return {
+    backdrop_path: `https://image.tmdb.org/t/p/original${data.backdrop_path}`,
+    title: data.title,    
+    average_rating: `★ ${data.vote_average.toFixed(1)}`,
+    tagline: data.tagline ? `"${data.tagline}"` : '',
+    overview: data.overview,
+    release_date: dayjs(data.release_date).format('MM-DD-YYYY'),
+    runtime: data.runtime ? `${data.runtime} Minutes` : '',
+    genres: data.genres.map(genre => genre.name)
   }
 }
