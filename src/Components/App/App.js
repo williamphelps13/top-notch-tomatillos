@@ -15,7 +15,7 @@ const App = () => {
     getPosterData()
       .then(data => setMovies(data))
       .catch(error => setError(error.message))
-  })
+  }, [])
   
   
   return (
