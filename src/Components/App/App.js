@@ -8,27 +8,36 @@ import { getPosterData } from '../../utilities/apiCalls'
 import { Route } from 'react-router-dom'
 
 const App = () => {
-  const [movies, setMovies] = useState([])
+  const [movies1, setMovies1] = useState([])
+  const [movies2, setMovies2] = useState([])
   const [error, setError] = useState('')
   
   useEffect(() => {
-    getPosterData()
-      .then(data => setMovies(data))
-      .catch(error => setError(error.message))
+    loadPage(1)
   }, [])
   
-  
+  const loadPage = (page) => {
+    getPosterData(page*2-1)
+      .then(data => setMovies1(data))
+      .then(data => {
+        getPosterData(page*2) 
+          .then(data => setMovies2(data))
+      })
+      .catch(error => setError(error.message))
+      .then()
+  }
+
   return (
     <main className="App">
-      <h1 className="App-header">Rancid Tomatillos</h1>
+      <h1 className="App-header">Top-Notch Tomatillos</h1>
       
       <Route exact path='/' 
         render={() =>
           error ? <Error message={error} page='movies' /> 
 
-          : !movies.length ? <Loader item='movie posters are' />
+          : !movies2.length ? <Loader item='movie posters are' />
 
-          : <Posters posters={movies} />
+          : <Posters loadPage={loadPage} posters={movies1.concat(movies2)} />
         }
       />
 
