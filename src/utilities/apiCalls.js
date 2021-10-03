@@ -1,19 +1,39 @@
-import { cleanPosterData, cleanMovieData } from './dataCleaning'
+import { cleanPosterData, cleanMovieData, cleanVideoData } from './dataCleaning'
 import dayjs from 'dayjs'
 
 const now = dayjs().format('YYYY-MM-DD')
 const oneMonthAgo = dayjs().subtract(1, 'month').format('YYYY-MM-DD')
 
-export const getPosterData = () => {
-  return fetch(`https://api.themoviedb.org/3/discover/movie?api_key=61beee5760e383289f2184ab4e7ff153&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&primary_release_date.gte=${oneMonthAgo}&primary_release_date.lte=${now}&with_watch_monetization_types=flatrate`)
+export const getPosterData = (pageNum) => {
+  return fetch(`https://api.themoviedb.org/3/discover/movie?api_key=61beee5760e383289f2184ab4e7ff153&with_original_language=en&sort_by=popularity.desc&include_adult=false&page=${pageNum}&primary_release_date.gte=${oneMonthAgo}&primary_release_date.lte=${now}&with_watch_monetization_types=flatrate`)
     .then(response => checkForError(response))
-    .then(data => cleanPosterData(data))
+    .then(data => {
+      console.log('discovery', data) 
+      return cleanPosterData(data)
+    })
 }
 
 export const getMovieData = (movieID) => {
-  return fetch(`https://api.themoviedb.org/3/movie/${movieID}?api_key=61beee5760e383289f2184ab4e7ff153&language=en-US`)
+  return fetch(`https://api.themoviedb.org/3/movie/${movieID}?api_key=61beee5760e383289f2184ab4e7ff153`)
     .then(response => checkForError(response))
-    .then(data => cleanMovieData(data))
+    .then(data => {
+      console.log('movie', data) 
+      return cleanMovieData(data)
+    })
+}
+
+export const getVideo = (movieID) => {
+  return fetch(`https://api.themoviedb.org/3/movie/${movieID}/videos?api_key=61beee5760e383289f2184ab4e7ff153`)
+    .then(response => checkForError(response))
+    .then(data => cleanVideoData(data))
+}
+
+export const getSimilar = (movieID) => {
+  return fetch(`https://api.themoviedb.org/3/movie/${movieID}/similar?api_key=61beee5760e383289f2184ab4e7ff153`)
+    .then(response => checkForError(response))
+    .then(data => {
+      console.log('similar', data) 
+    })
 }
 
 const checkForError = (response) => {
