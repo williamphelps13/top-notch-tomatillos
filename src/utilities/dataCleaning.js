@@ -3,22 +3,30 @@ import dayjs from 'dayjs'
 export const cleanPosterData = (data) => {
   return data.results.map(movie => {
     return {
-      id: movie.id, 
-      poster_path: `https://image.tmdb.org/t/p/w500${movie.poster_path}`, 
-      title: movie.title
+      id: movie.id,
+      popularity: movie.popularity ? movie.popularity : '', 
+      posterPath: movie.poster_path === null ? 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1mcHVzLjjPjJNNYOT8v2f0rYU2C5wzvf_BnvhayR8N6ENCTXSP9quG0ejpmJ2w6EBWYw&usqp=CAU' : `https://image.tmdb.org/t/p/w500${movie.poster_path}` , 
+      title: movie.title,
+      rating: movie.rating ? `★ ${movie.vote_average}`: '',
+      votes: movie.votes ? movie.vote_count: '',
+      releaseDate: movie.releaseDate ? dayjs(data.release_date).format('MM-DD-YYYY'): ''
     }
   })
 }
 
 export const cleanMovieData = (data) => {
   return {
-    backdrop_path: `https://image.tmdb.org/t/p/original${data.backdrop_path}`,
+    backdropPath: data.backdrop_path === null ? 'https://cdn-image.myrecipes.com/sites/default/files/styles/300x300/public/1588110162/GettyImages-508300585.jpg?itok=xs9uvgJW' : `https://image.tmdb.org/t/p/original${data.backdrop_path}`,
     title: data.title,    
-    average_rating: `★ ${data.vote_average.toFixed(1)}`,
+    rating: data.rating ? `★ ${data.vote_average}` : '',
     tagline: data.tagline ? `"${data.tagline}"` : '',
-    overview: data.overview,
-    release_date: dayjs(data.release_date).format('MM-DD-YYYY'),
+    overview: data.overview ? data.overview : '',
+    releaseDate: data.releaseDate ? dayjs(data.release_date).format('MM-DD-YYYY') : '',
     runtime: data.runtime ? `${data.runtime} Minutes` : '',
-    genres: data.genres.map(genre => genre.name)
+    genres: data.genres ? data.genres.map(genre => genre.name) : '',
   }
+}
+
+export const cleanVideoData = (data) => {
+  return data.results[0].key
 }
