@@ -4,7 +4,6 @@ export const cleanPosterData = (data) => {
   return data.results.map(movie => {
     return {
       id: movie.id,
-      popularity: movie.popularity ? movie.popularity : '', 
       posterPath: movie.poster_path === null ? 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1mcHVzLjjPjJNNYOT8v2f0rYU2C5wzvf_BnvhayR8N6ENCTXSP9quG0ejpmJ2w6EBWYw&usqp=CAU' : `https://image.tmdb.org/t/p/w500${movie.poster_path}` , 
       title: movie.title,
       rating: movie.rating ? `★ ${movie.vote_average}`: '',
@@ -29,4 +28,8 @@ export const cleanMovieData = (data) => {
 
 export const cleanVideoData = (data) => {
   return data.results[0].key
+}
+
+export const cleanImageData = (data) => {
+  return data.backdrops.map(review => review.file_path === null ? 'https://cdn-image.myrecipes.com/sites/default/files/styles/300x300/public/1588110162/GettyImages-508300585.jpg?itok=xs9uvgJW' : `https://image.tmdb.org/t/p/original${review.file_path}`)
 }
