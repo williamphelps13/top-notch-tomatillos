@@ -8,8 +8,8 @@ const Video = ({ id, title }) => (
       height='240'
       src={`https://www.youtube.com/embed/${id}`} 
       title={`${title} Movie Trailer`}
-      frameborder='0'
-      allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen
+      frameBorder='0'
+      allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowFullScreen
     />
   </div>
 )
