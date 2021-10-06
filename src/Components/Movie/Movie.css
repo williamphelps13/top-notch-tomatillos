@@ -64,6 +64,29 @@
   font-weight: bold;
 }
 
+.similar-container {
+  margin-top: .9rem;
+  height: 30vh;
+  overflow: scroll;
+}
+
+.container::-webkit-scrollbar {
+  width: 1rem;
+}
+ 
+.container::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: .1rem solid slategrey;
+}
+
+.container::-webkit-scrollbar-corner  {
+  background-color: rgb(40, 44, 52, 0.8);
+}
+
+.container::-webkit-scrollbar-corner  {
+  background-color: rgb(40, 44, 52, 0.8);
+}
+
 .back-btn {
   background: white;
   border: 0;
@@ -76,4 +99,16 @@
 
 .back-btn:hover {
   transform: scale(1.07) perspective(1px);  
+}
+
+.image-container {
+  max-width: 32rem;
+  max-height: 30vh;
+  overflow: scroll;
+  border: .5rem solid rgb(40, 44, 52, 0.8);
+}
+
+.images {
+  max-width: 30rem;
+  margin-bottom: 1rem;
 }
