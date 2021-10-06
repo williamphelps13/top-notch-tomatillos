@@ -3,13 +3,15 @@ import './Movie.css'
 import Error from '../Error/Error'
 import Loader from '../Loader/Loader'
 import Video from '../Video/Video'
-import { getMovieData, getVideo, getSimilar } from '../../utilities/apiCalls'
+import Posters from '../Posters/Posters'
+import { getMovieData, getVideo, getSimilar, getImages } from '../../utilities/apiCalls'
 import { Link } from 'react-router-dom'
 
 const Movie = ({ movieID }) => {
   const [singleMovie, setSingleMovie] = useState({})
   const [videoKey, setVideoKey] = useState('')
   const [similar, setSimilar] = useState('')
+  const [images, setImages] = useState('')
   const [error, setError] = useState('')
   
   const {backdropPath, title, rating, tagline, overview, releaseDate, runtime, genres} = singleMovie
@@ -20,21 +22,22 @@ const Movie = ({ movieID }) => {
       .catch(error => setError(error.message))
 
     getVideo(movieID)
-      .then(data => {
-        console.log('video', data)
-        setVideoKey(data)
-      })
+      .then(data => setVideoKey(data))
       .catch(error => setError(error.message))
 
     getSimilar(movieID)
       .then(data => setSimilar(data))
       .catch(error => setError(error.message)) 
-  }, [])
+
+    getImages(movieID)
+      .then(data => setImages(data))
+      .catch(error => setError(error.message)) 
+  }, [movieID])
 
   return (
     error ? <Error message={error} page='movie information' /> 
 
-    : !Object.keys(singleMovie).length ? <Loader item='movie information is' /> 
+    : !Object.keys(singleMovie).length || !similar || !videoKey ? <Loader item='movie information is' /> 
 
     :
       <section className='movie-background' style={{ backgroundImage: `url(${backdropPath})` }}>
@@ -49,14 +52,24 @@ const Movie = ({ movieID }) => {
             <div className='genre-container'>
               {genres.map(genre => <p className='genres' key={genre}>{genre}</p>)}
             </div>
+            <div className='similar-container container'>
+              <Posters pageOfMovies={similar} size='mini'/>
+            </div>
           </section>
           <Link to='/'>
             <button className='back-btn'>BACK</button>
           </Link> 
         </section>
-        <div>
-          <Video id={videoKey} title={title} />
-        </div>
+        <section>
+          <div>
+            <Video id={videoKey} title={title} />
+          </div>
+          { images && 
+            <div className='image-container container'>
+              {images.map((image, index) => <img src={image} alt={`${title} Movie Backdrop`} key={index}className='images' />)}
+            </div>
+          }
+        </section>
       </section>
   )
 }
