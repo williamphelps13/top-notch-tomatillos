@@ -1,63 +1,77 @@
-import React, { Component } from 'react';
-import './Movie.css';
-import Error from '../Error/Error';
-import Loader from '../Loader/Loader';
-import { getData } from '../../utilities/apiCalls';
-import { cleanMovieData } from '../../utilities/dataCleaning';
-import { Link } from 'react-router-dom';
+import React, {useState, useEffect} from 'react'
+import './Movie.css'
+import Error from '../Error/Error'
+import Loader from '../Loader/Loader'
+import Video from '../Video/Video'
+import Posters from '../Posters/Posters'
+import { getMovieData, getVideo, getSimilar, getImages } from '../../utilities/apiCalls'
+import { Link } from 'react-router-dom'
 
-class Movie extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      singleMovie: {},
-      error: ''
-    }
-  }
+const Movie = ({ movieID }) => {
+  const [singleMovie, setSingleMovie] = useState({})
+  const [videoKey, setVideoKey] = useState('')
+  const [similar, setSimilar] = useState('')
+  const [images, setImages] = useState('')
+  const [error, setError] = useState('')
+  
+  const {backdropPath, title, rating, tagline, overview, releaseDate, runtime, genres} = singleMovie
 
-  componentDidMount() {
-    getData(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${this.props.movieID}`)
-    .then(data => cleanMovieData(data))
-    .then(data => this.setState({singleMovie: data}))
-    .catch(error => this.setState({error: error.message}))
-  }
+  useEffect(() => {
+    getMovieData(movieID)
+      .then(data => setSingleMovie(data))
+      .catch(error => setError(error.message))
 
-  displayMovieCard = () => {
-    const {backdrop_path, title, average_rating, tagline, overview, release_date, runtime, genres} = this.state.singleMovie;
+    getVideo(movieID)
+      .then(data => setVideoKey(data))
+      .catch(error => setError(error.message))
 
-    return (
-      <section className='movie-background' style={{ backgroundImage: `url(${backdrop_path})` }}>
+    getSimilar(movieID)
+      .then(data => setSimilar(data))
+      .catch(error => setError(error.message)) 
+
+    getImages(movieID)
+      .then(data => setImages(data))
+      .catch(error => setError(error.message)) 
+  }, [movieID])
+
+  return (
+    error ? <Error message={error} page='movie information' /> 
+
+    : !Object.keys(singleMovie).length || !similar || !videoKey ? <Loader item='movie information is' /> 
+
+    :
+      <section className='movie-background' style={{ backgroundImage: `url(${backdropPath})` }}>
         <section className='movie-container'>
           <section className='movie-card'>
             <h2 className='title'>{title}</h2>
-            <p className='rating'>{average_rating}</p>
+            <p className='rating'>{rating}</p>
             <p className='tagline'>{tagline}</p>
             <p className='overview'>{overview}</p>
-            <p className='release'>{release_date}</p>
+            <p className='release'>{releaseDate}</p>
             <p className='runtime'>{runtime}</p>
             <div className='genre-container'>
               {genres.map(genre => <p className='genres' key={genre}>{genre}</p>)}
+            </div>
+            <div className='similar-container container'>
+              <Posters pageOfMovies={similar} size='mini'/>
             </div>
           </section>
           <Link to='/'>
             <button className='back-btn'>BACK</button>
           </Link> 
         </section>
+        <section>
+          <div>
+            <Video id={videoKey} title={title} />
+          </div>
+          { images && 
+            <div className='image-container container'>
+              {images.map((image, index) => <img src={image} alt={`${title} Movie Backdrop`} key={index}className='images' />)}
+            </div>
+          }
+        </section>
       </section>
-    )
-  }
-
-  conditionalPostersDisplay = () => {
-    const {singleMovie, error} = this.state;
-
-    return error ? <Error message={error} page='movie information' /> 
-      : !Object.keys(singleMovie).length ? <Loader item='movie information is' /> 
-      : this.displayMovieCard()
-  }
-
-  render = () => {
-    return this.conditionalPostersDisplay()
-  }
+  )
 }
 
-export default Movie;
+export default Movie

@@ -1,60 +1,36 @@
-import React, { Component } from 'react';
-import './App.css';
-import Error from '../Error/Error';
-import Loader from '../Loader/Loader';
-import Posters from '../Posters/Posters';
-import Movie from '../Movie/Movie';
-import { getData } from '../../utilities/apiCalls';
-import { cleanPosterData } from '../../utilities/dataCleaning';
-import { Route } from 'react-router-dom';
+import React from 'react'
+import './App.css'
+import PosterPage from '../PosterPage/PosterPage'
+import Movie from '../Movie/Movie'
+import { Route } from 'react-router-dom'
 
-class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      movies: [],
-      error: ''
-    }
-  }
+const App = () => {
   
-  componentDidMount = () => {
-    getData('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
-    .then(data => cleanPosterData(data))
-    .then(data => this.setState({movies: data}))
-    .catch(error => this.setState({error: error.message}))
-  }
+  return (
+    <main className="App">
+      <h1 className="App-header">Top-Notch Tomatillos</h1>
+      
+      <Route exact path='/' render={() =>
+        <>
+          <PosterPage page={1} />
+        </>
+      }/>
 
-  conditionalPostersDisplay = () => {
-    const {movies, error} = this.state;
+      <Route
+        exact path='/:num' 
+        render={({ match }) =>
+        <>
+          <PosterPage page={match.params.num} />
+        </>
+      }/>
 
-    return error ? <Error message={error} page='movies' /> 
-      : !movies.length ? <Loader item='movie posters are' />
-      : <Posters posters={movies} />
-  } 
+      <Route 
+        exact path='/movie/:id' 
+        render={({ match }) => <Movie movieID={parseInt(match.params.id)} />}
+      />
 
+    </main>
+  )
+}
 
-  parseID = (match) => {
-    return parseInt(match.params.id);
-  }
-
-  render = () => {
-
-    return (
-      <main className="App">
-        <h1 className="App-header">Top-Notch Tomatillos</h1>
-        
-        <Route exact path='/' 
-          render={() => this.conditionalPostersDisplay()}
-        />
-
-        <Route 
-          exact path='/:id' 
-          render={({ match }) => <Movie movieID={this.parseID(match)} />}
-        />
-        
-      </main>
-    );
-  }
-} 
-
-export default App;
+export default App

@@ -1,32 +1,29 @@
-import React from 'react';
-import './Posters.css';
-import { Link } from 'react-router-dom';
+import React from 'react'
+import './Posters.css'
+import { Link } from 'react-router-dom'
 
-const Posters = ({ posters }) => {
-
-  const moviePosters = posters.map(poster => {
-    const {id, poster_path, title} = poster;
-
+const Posters = ({ pageOfMovies, size }) => {
+  const moviePosters = pageOfMovies.map(poster => {
     return (
       <Link
-        to={`/${id}`}
-        key={id}  
+        to={`/movie/${poster.id}`}
+        key={poster.id}  
       >
-      <img
-        src={poster_path}
-        className='poster-icon'
-        alt={`${title} Movie Poster and Button`}
-        id={id}
-      />
+        <img
+          src={poster.posterPath}
+          className={`${size}-poster-icon`}
+          alt={`${poster.title} Movie Poster and Button`}
+          id={poster.id}
+        />
       </Link>
     )
   })
-  
+
   return (
-    <section className='posters-container'>
+    <section>
       {moviePosters}
     </section>
   )
 }
 
-export default Posters;
+export default Posters

@@ -1,5 +1,5 @@
 import React from 'react'
-import './Loader.css';
+import './Loader.css'
 import loaderIcon from './loader.jpg'
 
 const Loader = ({ item }) => {
@@ -16,4 +16,4 @@ const Loader = ({ item }) => {
   )
 }
 
-export default Loader;
+export default Loader
