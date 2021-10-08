@@ -5,7 +5,6 @@ import Error from '../Error/Error'
 import Loader from '../Loader/Loader'
 import Posters from '../Posters/Posters'
 import { getPosterData, getSearchResults } from '../../utilities/apiCalls'
-import { Link } from 'react-router-dom'
 
 const PosterPage = ({ page }) => {
   const [selection, setSelection] = useState('getThisMonthPop')
@@ -57,7 +56,13 @@ const PosterPage = ({ page }) => {
 
   const searchMovies = () => {
     getSearchResults(page*2-1, search)
-      .then(data => setMovies1(data))
+      .then(data => {
+        if (!data.length) {
+          setMovies1(['Empty'])
+        } else {
+          setMovies1(data)
+        }
+      })
       .then(data => {
         getSearchResults(page*2, search)
           .then(data => setMovies2(data))
@@ -68,12 +73,12 @@ const PosterPage = ({ page }) => {
 
   return (
     error ? <Error message={error} page='movies' /> 
-    : !movies2.length ? <Loader item='movie posters are' />
-    : 
+    : !movies1.length ? <Loader item='movie posters are' />
+    :
     <>
       <section>
-        <h3>I want to see...</h3>
-        <input type='radio' name='selection' value='getThisMonthPop' onChange={handleChange} ></input>
+        <h3>I want to see:</h3>
+        <input type='radio' name='selection' value='getThisMonthPop' onChange={handleChange} defaultChecked></input>
         <label>New Movies this Month by Most Popular</label><br />
         <input type='radio' name='selection' value='getThisYearPop' onChange={handleChange} ></input>
         <label>New Movies this Year by Most Popular</label><br />
@@ -98,7 +103,9 @@ const PosterPage = ({ page }) => {
         <button onClick={searchMovies}>Search Movies</button>
       </section>
       <PageButtons />
-      <Posters pageOfMovies={pageOfMovies} size={'standard'} />
+      {movies1.includes('Empty') ? <h3>No Search Results</h3> 
+      : <Posters pageOfMovies={pageOfMovies} size={'standard'} />
+      }
     </>
   )
 }
