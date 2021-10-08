@@ -25,7 +25,7 @@ export const getPosterData = (start, pageNum, sortBy, genre) => {
 
 // &primary_release_year=2021
 export const getSearchResults = (pageNum, search) => {
-  return fetch(`https://api.themoviedb.org/3/search/movie?api_key=61beee5760e383289f2184ab4e7ff153&include_adult=false&page=${pageNum}&query=${search}`)
+  return fetch(`https://api.themoviedb.org/3/search/movie?api_key=61beee5760e383289f2184ab4e7ff153&include_adult=false&page=${pageNum}&query=${encodeURIComponent(search)}`)
     .then(response => checkForError(response))
     .then(data => cleanPosterData(data))
 }
