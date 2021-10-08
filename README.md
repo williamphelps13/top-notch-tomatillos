@@ -1,10 +1,11 @@
 # Top-Notch Tomatillos
 
-<img width="1417" alt="Screen Shot 2021-09-06 at 5 24 11 PM" src="https://user-images.githubusercontent.com/22990386/132265533-a180eb44-a65d-4a13-984e-8b74b0e3121c.png">
+<img width="1884" alt="Screen Shot 2021-10-08 at 10 22 34 AM" src="https://user-images.githubusercontent.com/22990386/136590833-b283372d-64e9-4c60-937f-6c514a3ee2fd.png">
+
 
 This is an application to display movie posters and then access movie details through an API. The user can access a list of movie posters, select any one of them, & be provided information about that specific film, including its rating, description, release year, tagline, running time, and genre(s).
 
-The application is deployed and can be [accessed online here](https://rottentomatillos.surge.sh/).
+The application is deployed and can be [accessed online here](https://top-notch-tomatillos.surge.sh/).
 
 ## Motivation and rubric
 
